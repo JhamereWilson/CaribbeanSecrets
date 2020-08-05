@@ -18,9 +18,8 @@ class LayoutTemplate extends StatelessWidget {
         body: ListView(
           children: [
             SizedBox(
-              height: 40,
+              height: 20,
             ),
-            NavigationBar(),
             Container(
               height: MediaQuery.of(context).size.height,
               child: Navigator(

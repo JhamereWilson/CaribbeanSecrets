@@ -8,7 +8,8 @@ class HomeContentDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        HeroView(),
+        NavigationBar(),
+        CenteredView(child: HeroView()),
         SizedBox(height: 200),
         CenteredView(
           child: BlogSection(),
