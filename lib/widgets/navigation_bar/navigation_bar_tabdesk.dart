@@ -18,10 +18,10 @@ class NavigationBarTabDesk extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                NavBarItem("Shop", ShopRoute),
-                NavBarItem("Blog", BlogRoute),
-                NavBarItem("Community", CommunityRoute),
-                NavBarItem("Our Story", AboutRoute),
+                NavBarItem(title: "Shop", navigationPath: ShopRoute),
+                NavBarItem(title: "Blog", navigationPath: BlogRoute),
+                NavBarItem(title: "Community", navigationPath:  CommunityRoute),
+                NavBarItem(title: "Our Story", navigationPath:  AboutRoute),
               ],
             )),
       ],

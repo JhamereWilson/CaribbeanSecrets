@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../widgets.dart';
@@ -8,7 +7,10 @@ class DrawerItem extends StatelessWidget {
   final String navigationPath;
   final IconData icon;
 
-  const DrawerItem({@required this.title, @required this.icon, @required this.navigationPath});
+  const DrawerItem(
+      {@required this.title,
+      @required this.icon,
+      @required this.navigationPath});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class DrawerItem extends StatelessWidget {
             color: Colors.white,
           ),
           SizedBox(width: 30),
-          NavBarItem(title, navigationPath),
+          NavBarItem(title: title, navigationPath: navigationPath),
         ],
       ),
     );

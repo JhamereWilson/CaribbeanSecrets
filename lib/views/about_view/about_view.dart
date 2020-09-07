@@ -1,6 +1,7 @@
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/centered_view/centered_view.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/footer/footer.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class AboutView extends StatelessWidget {
@@ -10,6 +11,7 @@ class AboutView extends StatelessWidget {
       backgroundColor: Colors.black,
       body: ListView(
         children: [
+          // NavigationBar(),
           CenteredView(
             child: Container(
               width: ScreenDimensions(context).screenWidth,

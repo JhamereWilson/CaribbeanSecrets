@@ -9,6 +9,7 @@ class CommunityView extends StatelessWidget {
       backgroundColor: Colors.black,
       body: ListView(
         children: [
+          // NavigationBar(),
           CenteredView(
             child: Container(
               width: ScreenDimensions(context).screenWidth,

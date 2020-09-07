@@ -7,20 +7,20 @@ import 'route_names.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
-      return _getPageRoute(HomeView());
+      return _getPageRoute(HomeView(), settings);
     case ShopRoute:
-      return _getPageRoute(ShopView());
+      return _getPageRoute(ShopView(), settings);
     case AboutRoute:
-      return _getPageRoute(AboutView());
+      return _getPageRoute(AboutView(), settings);
     case BlogRoute:
-      return _getPageRoute(BlogView());
+      return _getPageRoute(BlogView(), settings);
     case CommunityRoute:
-      return _getPageRoute(CommunityView());
+      return _getPageRoute(CommunityView(), settings);
   }
 }
 
-PageRoute _getPageRoute(Widget child) {
-  return _FadeRoute(child: child);
+PageRoute _getPageRoute(Widget child, RouteSettings settings) {
+  return _FadeRoute(child: child, routeName: settings.name);
 }
 
 class _FadeRoute extends PageRouteBuilder {

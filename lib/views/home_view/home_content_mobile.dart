@@ -8,7 +8,7 @@ import '../views.dart';
 class HomeContentMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         HeroView(),
         SizedBox(height: 100),
