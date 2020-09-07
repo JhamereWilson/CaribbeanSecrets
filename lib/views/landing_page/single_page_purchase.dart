@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/views/animated_text.dart';
+import 'package:caribbean_secrets_ecommerce/views/landing_page/subscribe_field.dart';
 
 import 'package:caribbean_secrets_ecommerce/views/logo_view/logo_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_page.dart';
@@ -178,7 +179,7 @@ class SinglePurchaseLandingPage extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  height: 350,
+                  height: 400,
                   width: screen.screenWidth,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -197,17 +198,30 @@ class SinglePurchaseLandingPage extends StatelessWidget {
                       SizedBox(
                         height: 50,
                       ),
-                      Text(
-                        "Email",
-                        style: TextStyle(
-                            fontSize: 36,
-                            color: Colors.white54,
-                            fontWeight: FontWeight.w100),
+                      SubscribeField(),
+                      SizedBox(
+                        height: 40,
                       ),
                       Container(
-                        height: 1,
-                        width: 1400,
-                        color: Colors.white,
+                        height: 50,
+                        width: 450,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white12,
+                            border: Border.all(
+                                color: Colors.white,
+                                width: 1,
+                                style: BorderStyle.solid)),
+                        child: FlatButton(
+                          onPressed: () {},
+                          child: Text(
+                            "SUBSCRIBE",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 18),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -220,9 +234,11 @@ class SinglePurchaseLandingPage extends StatelessWidget {
           Container(
             width: 600,
             height: 600,
-            child: Image(image: AssetImage('/images/CSwebsite-20.jpg'),),
+            child: Image(
+              image: AssetImage('/images/CSwebsite-20.jpg'),
             ),
-          
+          ),
+
           // Container(
           //   // padding: EdgeInsets.all(10),
           //   height: 800,
