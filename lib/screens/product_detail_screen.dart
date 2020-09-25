@@ -17,10 +17,8 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productId = ModalRoute.of(context).settings.arguments as String;
-    final loadedProduct = Provider.of<Products>(context).oils.firstWhere(
-        (prod) =>
-            prod.id ==
-            productId); //returns a product where the product IDs match
+    final loadedProduct = Provider.of<Products>(context, listen: false).findById(productId);  
+    //returns a product where the product IDs match --> NOTE: listen is false because this widget doesn't need to rebuild 
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(children: [

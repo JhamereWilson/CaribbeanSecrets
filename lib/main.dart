@@ -10,7 +10,7 @@ import 'views/cart/cart_page.dart';
 import 'views/landing_page/single_page_purchase.dart';
 
 void main() {
-  setupLocator();
+  // setupLocator();
   runApp(MyApp());
 }
 
@@ -31,13 +31,14 @@ class MyApp extends StatelessWidget {
         // key: locator<NavigationService>().navigatorKey,
         // onGenerateRoute: generateRoute,
         // initialRoute: HomeRoute,
-        home: SinglePurchaseLandingPage(),
-        // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => SinglePurchaseLandingPage(),
-        //   '/cart': (context) => CartPage(),
-        //   '/checkout': (context) => CheckoutScreen(),
-        // },
+        // home: SinglePurchaseLandingPage(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => SinglePurchaseLandingPage(),
+          '/cart': (context) => CartPage(),
+          '/checkout': (context) => CheckoutScreen(),
+          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+        },
       ),
     );
   }

@@ -24,7 +24,7 @@ class NavBarItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         print(navigationPath + " button tapped");
-        locator<NavigationService>().navigateTo(navigationPath);
+        // locator<NavigationService>().navigateTo(navigationPath);
       },
       child: Provider.value(
         value: model,

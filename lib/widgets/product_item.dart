@@ -1,3 +1,4 @@
+import 'package:caribbean_secrets_ecommerce/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
@@ -11,66 +12,75 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridTile(
-      child: Column(
-        children: [
-          Container(
-            height: 300,
-            width: 300,
-            margin: EdgeInsets.symmetric(horizontal: 50),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imageUrl),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(ProductDetailScreen.routeName);
+        },
+        child: Column(
+          children: [
+            Container(
+              height: 300,
+              width: 300,
+              margin: EdgeInsets.symmetric(horizontal: 50),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageUrl),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 5),
-          Text(
-            title,
-            style: TextStyle(
-                color: Colors.white, fontSize: 28, fontWeight: FontWeight.w100),
-          ),
-          SizedBox(height: 20),
-          Text(
-            price.toString(),
-            style: TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900),
-          ),
-          SizedBox(height: 20),
-          Container(
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.red,
-                Colors.orange,
-                Colors.yellow,
-                Colors.green,
-                Colors.teal,
-                Colors.blue,
-                Colors.purple,
-                Colors.deepPurple
-              ]),
-              borderRadius: BorderRadius.circular(32),
+            SizedBox(height: 5),
+            Text(
+              title,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w100),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: Colors.black,
-                ),
-                child: FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    "ADD TO CART",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w400),
+            SizedBox(height: 20),
+            Text(
+              price.toString(),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Colors.red,
+                  Colors.orange,
+                  Colors.yellow,
+                  Colors.green,
+                  Colors.teal,
+                  Colors.blue,
+                  Colors.purple,
+                  Colors.deepPurple
+                ]),
+                borderRadius: BorderRadius.circular(32),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                    color: Colors.black,
+                  ),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      "ADD TO CART",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
