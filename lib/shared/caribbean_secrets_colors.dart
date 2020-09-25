@@ -11,4 +11,8 @@ class CaribbeanSecretsColors {
     Colors.purple,
     Colors.deepPurple
   ];
+
+  get gradient {
+    return LinearGradient(colors: colors);
+  }
 }

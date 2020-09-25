@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:caribbean_secrets_ecommerce/shared/caribbean_secrets_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 
 class AnimatedText extends StatefulWidget {
   @override
@@ -12,17 +13,24 @@ class AnimatedText extends StatefulWidget {
 class _AnimatedTextState extends State<AnimatedText> {
   bool isBold = true;
   final random = Random();
+  Timer _clockTimer;
 
   @override
   void initState() {
     super.initState();
 
     // defines a timer
-    Timer.periodic(Duration(seconds: 1), (Timer t) {
+    _clockTimer = Timer.periodic(Duration(seconds: 1), (Timer t) {
       setState(() {
         isBold ? isBold = false : isBold = true;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _clockTimer.cancel();
+    super.dispose();
   }
 
   @override
@@ -42,6 +50,54 @@ class _AnimatedTextState extends State<AnimatedText> {
       child: Text(
         "THE \nSECRET \nCOLLECTION \nIS \nHERE.",
       ),
+    );
+  }
+}
+
+class GlowingText extends StatefulWidget {
+  @override
+  _GlowingTextState createState() => _GlowingTextState();
+}
+
+class _GlowingTextState extends State<GlowingText> {
+  bool isBold = true;
+  final random = Random();
+  Timer _clockTimer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // defines a timer
+    _clockTimer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      setState(() {
+        isBold ? isBold = false : isBold = true;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _clockTimer.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedCrossFade(
+      duration: const Duration(seconds: 1),
+      firstChild: const Text(
+        "Learn More",
+        style: TextStyle(
+            fontSize: 72, fontWeight: FontWeight.w900, color: Colors.white),
+      ),
+      secondChild: const GlowText(
+        "Learn More",
+        style: TextStyle(
+            fontSize: 72, fontWeight: FontWeight.w900, color: Colors.white),
+      ),
+      crossFadeState:
+          isBold ? CrossFadeState.showFirst : CrossFadeState.showSecond,
     );
   }
 }

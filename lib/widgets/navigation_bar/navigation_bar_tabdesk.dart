@@ -7,24 +7,21 @@ import '../widgets.dart';
 class NavigationBarTabDesk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        LogoView(
-          height: 100,
-          width: 200,
-        ),
-        Container(
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                NavBarItem(title: "Shop", navigationPath: ShopRoute),
-                NavBarItem(title: "Blog", navigationPath: BlogRoute),
-                NavBarItem(title: "Community", navigationPath:  CommunityRoute),
-                NavBarItem(title: "Our Story", navigationPath:  AboutRoute),
-              ],
-            )),
-      ],
+    return Container(
+      height: 100,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          NavBarItem(title: "Shop", navigationPath: ShopRoute),
+          // NavBarItem(title: "Blog", navigationPath: BlogRoute),
+          LogoView(
+            height: 50,
+            width: 100,
+          ),
+          // NavBarItem(title: "Community", navigationPath: CommunityRoute),
+          NavBarItem(title: "Our Story", navigationPath: AboutRoute),
+        ],
+      ),
     );
   }
 }

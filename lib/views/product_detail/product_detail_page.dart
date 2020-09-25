@@ -45,9 +45,9 @@ class ProductDetail extends StatelessWidget {
                     Text(
                       'Price: \$15.00',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.redAccent[400],
                           fontSize: 24,
-                          fontWeight: FontWeight.w100),
+                          fontWeight: FontWeight.w600),
                     ),
                     SizedBox(height: 10),
                     Text(
