@@ -1,24 +1,26 @@
 import 'dart:html';
-import 'package:caribbean_secrets_ecommerce/shared/caribbean_secrets_colors.dart';
-import 'package:caribbean_secrets_ecommerce/shared/gradient_text.dart';
-import 'package:easy_gradient_text/easy_gradient_text.dart';
+
+import 'package:caribbean_secrets_ecommerce/providers/products.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
 
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  final String title;
-  final String imageUrl;
-  final double price;
   final int quantityValue;
 
-  const ProductDetailScreen(
-      {Key key, this.title, this.imageUrl, this.price, this.quantityValue})
-      : super(key: key);
+  const ProductDetailScreen({this.quantityValue});
+
+  static const routeName = '/product-detail';
 
   @override
   Widget build(BuildContext context) {
+    final productId = ModalRoute.of(context).settings.arguments as String;
+    final loadedProduct = Provider.of<Products>(context).oils.firstWhere(
+        (prod) =>
+            prod.id ==
+            productId); //returns a product where the product IDs match
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(children: [
@@ -38,7 +40,7 @@ class ProductDetailScreen extends StatelessWidget {
                         width: 300,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("images/CS1Bottle.png"),
+                              image: AssetImage(loadedProduct.imageUrl),
                               fit: BoxFit.cover),
                         ),
                       ),
@@ -46,7 +48,7 @@ class ProductDetailScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Original Haitian Castor Oil",
+                            loadedProduct.title,
                             // title,
                             style: TextStyle(
                                 color: Colors.white,
@@ -54,17 +56,8 @@ class ProductDetailScreen extends StatelessWidget {
                                 fontSize: 36),
                           ),
                           SizedBox(height: 20),
-                          // GradientText(
-                          //   text: "\$40.00",
-                          //   colors: CaribbeanSecretsColors.colors,
-                          //   style: TextStyle(
-                          //     fontWeight: FontWeight.w600,
-                          //     fontSize: 28,
-                          //   ),
-                          // ),
                           Text(
-                            "\$40.00",
-                            // price.toString(),
+                            loadedProduct.price.toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
@@ -168,7 +161,7 @@ class ProductDetailScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Original Haitian Castor Oil",
+                      loadedProduct.title,
                       // title,
                       style: TextStyle(
                           color: Colors.white,

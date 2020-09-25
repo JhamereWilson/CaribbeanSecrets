@@ -21,23 +21,24 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => Products(),
       child: MaterialApp(
-          title: 'Caribbean Secrets',
-          debugShowCheckedModeBanner: false,
-          // theme: ThemeData(
-          //   primarySwatch: Colors.blue,
-          //   visualDensity: VisualDensity.adaptivePlatformDensity,
-          // ),
-          // builder: (context, child) => LayoutTemplate(child: child),
-          // key: locator<NavigationService>().navigatorKey,
-          // onGenerateRoute: generateRoute,
-          // initialRoute: HomeRoute,
-          home: CheckoutScreen(),
-          initialRoute: '/',
-          routes: {
-            '/': (context) => SinglePurchaseLandingPage(),
-            '/cart': (context) => CartPage(),
-            '/checkout': (context) => CheckoutScreen(),
-          }),
+        title: 'Caribbean Secrets',
+        debugShowCheckedModeBanner: false,
+        // theme: ThemeData(
+        //   primarySwatch: Colors.blue,
+        //   visualDensity: VisualDensity.adaptivePlatformDensity,
+        // ),
+        // builder: (context, child) => LayoutTemplate(child: child),
+        // key: locator<NavigationService>().navigatorKey,
+        // onGenerateRoute: generateRoute,
+        // initialRoute: HomeRoute,
+        home: SinglePurchaseLandingPage(),
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => SinglePurchaseLandingPage(),
+        //   '/cart': (context) => CartPage(),
+        //   '/checkout': (context) => CheckoutScreen(),
+        // },
+      ),
     );
   }
 }

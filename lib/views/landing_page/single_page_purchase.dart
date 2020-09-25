@@ -10,6 +10,7 @@ import 'package:caribbean_secrets_ecommerce/views/landing_page/subscribe_field.d
 import 'package:caribbean_secrets_ecommerce/views/logo_view/logo_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_page.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/product_item.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/products_list.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
@@ -193,29 +194,7 @@ class _SinglePurchaseLandingPageState extends State<SinglePurchaseLandingPage> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ProductItem(
-                        id: "1",
-                        title: "Original Haitian Castor Oil",
-                        price: "\$20.00",
-                        imageUrl: "/images/CS1Bottle.png",
-                      ),
-                      ProductItem(
-                        id: "2",
-                        title: "Vanilla Haitian Castor Oil",
-                        price: "\$20.00",
-                        imageUrl: "/images/CS1Bottle.png",
-                      ),
-                      ProductItem(
-                        id: "3",
-                        title: "Peppermint Haitian Castor Oil",
-                        price: "\$20.00",
-                        imageUrl: "/images/CS1Bottle.png",
-                      ),
-                    ],
-                  ),
+                  Container(height: 500,child: Center(child: ProductsList())),
                   SizedBox(height: 100),
 
                   // -- SECRET COLLECTION/SUBSCRIPTION VIEW
