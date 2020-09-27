@@ -1,17 +1,12 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
-import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
-import 'package:caribbean_secrets_ecommerce/routing/router.dart';
-import 'package:caribbean_secrets_ecommerce/screens/checkout_screen.dart';
-import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
-import 'package:caribbean_secrets_ecommerce/services/navigation_services.dart';
-import 'package:caribbean_secrets_ecommerce/views/home_view/home_view.dart';
+
 import 'package:caribbean_secrets_ecommerce/widgets/layout_template/layout_template.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'locator.dart';
-import 'screens/cart_screens/cart_screen.dart';
+
 
 
 void main() {
@@ -37,10 +32,12 @@ class MyApp extends StatelessWidget {
         //   primarySwatch: Colors.blue,
         //   visualDensity: VisualDensity.adaptivePlatformDensity,
         // ),
-        builder: (context, child) => LayoutTemplate(child: child),
-        key: locator<NavigationService>().navigatorKey,
-        onGenerateRoute: generateRoute,
-        initialRoute: HomeRoute,
+        // builder: (context, child) => LayoutTemplate(child: child),
+        // key: locator<NavigationService>().navigatorKey,
+        // onGenerateRoute: generateRoute,
+        // initialRoute: HomeRoute,
+        home: LayoutTemplate(),
+        
  
       ),
     );

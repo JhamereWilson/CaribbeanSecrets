@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const functions = require("firebase-functions");
 const cors = require('cors');
 const corsHandler = cors({ origin: true });
+const { v4: uuidv4 } = require('uuid');
 
 
 
@@ -11,6 +12,7 @@ const SquareConnect = require('square-connect');
 const crypto = require('crypto');
 const defaultClient = SquareConnect.ApiClient.instance;
 defaultClient.basePath = "https://connect.squareupsandbox.com";
+
 
 // Configure OAuth2 access token for authorization: oauth2
 const oauth2 = defaultClient.authentications['oauth2'];
@@ -47,25 +49,26 @@ exports.createCustomer = functions.https.onRequest((req, res) => {
 
 //Checkout API Call
 
-exports.createCheckout = functions.https.onRequest((req, res) => {
-    var locationID = LX5RNR9P3K0C5;
-    const idempotencyKey = crypto.randomBytes(22).toString('hex');
-    const requestBody = new SquareConnect.CreateCheckoutRequest({idempotency_key: idempotencyKey, locationID: locationID, ask_for_shipping_address: true, order: {idempotency_key: idempotencyKey, referenceID: Date.now.toString},})
+exports.createCheckout = functions.region('us-central1').https.onRequest((req, res) => {
     corsHandler(req, res, async () => {
+        const locationID = "LX5RNR9P3K0C5";
+        const body = new SquareConnect.CreateCheckoutRequest(req.body);
         
-        try {
-            const response = 
-            
-            await checkout_api.createCheckout(requestBody);
-            
-            res.status(200).send(response);
-        }
-        catch (error) {
-            console.error("Error when checking out", error);
-            res.send(error);
-        }
+            console.log("CREATING CHECKOUT")
+            console.log(body)
+            await checkout_api.createCheckout(
+                locationID, body
+            ).then((result) => { return res.send(result.checkout.checkout_page_url);
+              
+            }).catch((error) => {
+                res.send(error);
+            });
+        
+     
     });
 });
+
+
 
 
 

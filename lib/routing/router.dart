@@ -1,6 +1,8 @@
-import 'package:caribbean_secrets_ecommerce/models/routing_data.dart';
+
+import 'package:caribbean_secrets_ecommerce/views/checkout/checkout_screen.dart';
 import 'package:caribbean_secrets_ecommerce/views/about/about_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/blog/blog_view.dart';
+import 'package:caribbean_secrets_ecommerce/views/cart/cart_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/community/community_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
@@ -10,8 +12,8 @@ import 'route_names.dart';
 
 // ignore: missing_return
 Route<dynamic> generateRoute(RouteSettings settings) {
-  var routingData = settings.name.getRoutingData;
-  switch (routingData.route) {
+
+  switch (settings.name) {
     case HomeRoute:
       return _getPageRoute(HomeView(), settings);
     case ShopRoute:
@@ -23,8 +25,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case SecretsTVRoute:
       return _getPageRoute(SecretsTVView(), settings);
     case ProductDetailRoute:
-    var id = int.tryParse(routingData['id']);
-      return _getPageRoute(ProductDetailView(productId: id), settings);
+     int data = settings.arguments;
+      return _getPageRoute(ProductDetailView(productId: data,), settings);
+    case CartRoute:
+      return _getPageRoute(CartView(), settings);
+    case CheckoutRoute:
+      return _getPageRoute(CheckoutScreen(), settings);
   }
 }
 

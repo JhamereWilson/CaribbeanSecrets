@@ -12,8 +12,7 @@ class LogoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      onPressed: (){},
-      // onPressed: () => locator<NavigationService>().navigateTo(HomeRoute),
+      onPressed: () => locator<NavigationService>().navigateTo(HomeRoute),
       child: Container(
         height: height,
         width: width,

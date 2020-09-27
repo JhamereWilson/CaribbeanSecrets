@@ -1,4 +1,3 @@
-
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
 import 'package:flutter/material.dart';
 
@@ -13,15 +12,19 @@ class NavigationBarMobile extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Icon(Icons.person_outline, color: Colors.transparent,),
+              Icon(
+                Icons.person_outline,
+                color: Colors.transparent,
+              ),
               LogoView(
                 height: 80,
                 width: 160,
               ),
-              Icon(
-                Icons.menu,
+              IconButton(
                 color: Colors.white,
-                size: 36,
+                iconSize: 36,
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                icon: Icon(Icons.menu),
               ),
             ],
           ),

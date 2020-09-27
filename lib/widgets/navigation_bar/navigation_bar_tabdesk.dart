@@ -12,12 +12,13 @@ class NavigationBarTabDesk extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           NavBarItem(title: "Shop", navigationPath: ShopRoute),
           NavBarItem(title: "Blog", navigationPath: BlogRoute),
           LogoView(
-            height: 50,
-            width: 100,
+            height: 70,
+            width: 150,
           ),
           NavBarItem(title: "Secrets TV", navigationPath: SecretsTVRoute),
           NavBarItem(title: "Our Story", navigationPath: AboutRoute),

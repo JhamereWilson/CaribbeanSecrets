@@ -4,3 +4,6 @@ const String AboutRoute = '/about';
 const String BlogRoute = '/blog';
 const String SecretsTVRoute = '/tv';
 const String ProductDetailRoute = '/product';
+const String CartRoute = '/cart';
+const String CheckoutRoute = '/checkout';
+
