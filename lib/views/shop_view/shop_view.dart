@@ -17,9 +17,6 @@ class ShopView extends StatelessWidget {
               color: Colors.green,
             ),
           ),
-          SizedBox(height: 30,),
-          Footer(),
-          SizedBox(height: 30,),
         ],
       ),
     );

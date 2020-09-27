@@ -1,10 +1,10 @@
-
 import 'package:caribbean_secrets_ecommerce/views/checkout/checkout_screen.dart';
 import 'package:caribbean_secrets_ecommerce/views/about/about_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/blog/blog_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/cart/cart_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/community/community_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
+import 'package:caribbean_secrets_ecommerce/views/secrets_tv/episodes_detail_view.dart';
+import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ import 'route_names.dart';
 
 // ignore: missing_return
 Route<dynamic> generateRoute(RouteSettings settings) {
-
+  // var routingData = settings.name.getRoutingData;
   switch (settings.name) {
     case HomeRoute:
       return _getPageRoute(HomeView(), settings);
@@ -24,13 +24,24 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(BlogView(), settings);
     case SecretsTVRoute:
       return _getPageRoute(SecretsTVView(), settings);
-    case ProductDetailRoute:
-     int data = settings.arguments;
-      return _getPageRoute(ProductDetailView(productId: data,), settings);
+    case EpisodeDetailRoute:
+      int data = settings.arguments;
+      return _getPageRoute(
+          EpisodeDetailView(
+            productId: data,
+          ),
+          settings);
     case CartRoute:
       return _getPageRoute(CartView(), settings);
     case CheckoutRoute:
       return _getPageRoute(CheckoutScreen(), settings);
+    case ProductDetailRoute:
+      int data = settings.arguments;
+      return _getPageRoute(
+          ProductDetailView(
+            productId: data,
+          ),
+          settings);
   }
 }
 

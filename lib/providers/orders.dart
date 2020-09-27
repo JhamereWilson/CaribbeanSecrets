@@ -53,7 +53,8 @@ class Orders with ChangeNotifier {
                   id: item['id'],
                   price: item['price'],
                   quantity: item['quantity'],
-                  title: item['title'],
+                  title: item['title'], 
+                  imageUrl: item['imageUrl'], productId: item['productId'],
                 ),
               )
               .toList(),

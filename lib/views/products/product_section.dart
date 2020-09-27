@@ -1,3 +1,4 @@
+import 'package:caribbean_secrets_ecommerce/views/products/product_section_desktop.dart';
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';

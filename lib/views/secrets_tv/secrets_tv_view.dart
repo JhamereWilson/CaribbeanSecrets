@@ -17,7 +17,6 @@ class SecretsTVView extends StatelessWidget {
               color: Colors.yellow,
             ),
           ),
-          Footer(),
         ],
       ),
     );

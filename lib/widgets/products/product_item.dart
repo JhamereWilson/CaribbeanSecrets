@@ -1,6 +1,7 @@
+
 import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
-import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
+
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,15 +9,14 @@ import 'package:provider/provider.dart';
 class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var screenHeight = ScreenDimensions(context).screenHeight;
+    // var screenHeight = ScreenDimensions(context).screenHeight;
     var screenWidth = ScreenDimensions(context).screenWidth;
     final product = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
     return GridTile(
       child: GestureDetector(
         onTap: () {
-          // Navigator.of(context)
-          //     .pushNamed(ProductDetailScreen.routeName, arguments: product.id);
+        //TODO: Implement navigation function when user taps -> router settings is fucking up
         },
         child: Column(
           children: [

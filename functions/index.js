@@ -58,8 +58,10 @@ exports.createCheckout = functions.region('us-central1').https.onRequest((req, r
             console.log(body)
             await checkout_api.createCheckout(
                 locationID, body
-            ).then((result) => { return res.send(result.checkout.checkout_page_url);
-              
+            ).then((result) => { 
+                console.log(res.body)
+                return res.send(result);
+            
             }).catch((error) => {
                 res.send(error);
             });

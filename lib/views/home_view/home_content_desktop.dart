@@ -1,4 +1,5 @@
-import 'package:caribbean_secrets_ecommerce/views/product_section/product_section.dart';
+
+import 'package:caribbean_secrets_ecommerce/views/products/product_section.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/model_photos.dart/model_photos.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';

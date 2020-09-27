@@ -79,9 +79,10 @@ class _CheckoutWebViewState extends State<CheckoutWebView> {
         print("RESULT DATA:" + result.data);
         setState(() {
           final Map<String, dynamic> data = jsonDecode(result.data);
-          url = data["checkout"]["checkout_page_url"].toString();
-          print("URL" + url);
-          print("DATA" + data.toString());
+          url = data["checkout"]["checkout_page_url"];
+          print(url);
+          print("DATA");
+          print(data);
         });
         return url;
       } else {

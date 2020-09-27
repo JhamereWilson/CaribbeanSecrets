@@ -3,7 +3,7 @@ import 'package:caribbean_secrets_ecommerce/services/navigation_services.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_bar/navbar_item_desktop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:caribbean_secrets_ecommerce/extensions/hover_extensions.dart';
+
 
 import '../../locator.dart';
 
