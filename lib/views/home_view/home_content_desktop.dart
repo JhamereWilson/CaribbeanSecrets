@@ -1,3 +1,5 @@
+import 'package:caribbean_secrets_ecommerce/views/product_section/product_section.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/model_photos.dart/model_photos.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -9,15 +11,16 @@ class HomeContentDesktop extends StatelessWidget {
     return ListView(
       children: [
         // NavigationBar(),
-        CenteredView(child: HeroView()),
-        SizedBox(height: 200),
-        CenteredView(
-          child: BlogSection(),
-        ),
-        SizedBox(height: 200),
+        HeroView(),
+        SizedBox(height: 30),
+        Align(
+            alignment: Alignment.center,
+            child: LogoView(height: 300, width: 600)),
+        SizedBox(height: 30),
+        ModelPhotos(),
+        SizedBox(height: 50),
         ProductSection(),
-        SizedBox(height: 200),
-        Footer(),
+        // Footer(),
       ],
     );
   }

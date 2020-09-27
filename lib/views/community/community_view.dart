@@ -2,7 +2,7 @@ import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class CommunityView extends StatelessWidget {
+class SecretsTVView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

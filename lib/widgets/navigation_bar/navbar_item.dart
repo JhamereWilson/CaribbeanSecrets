@@ -15,21 +15,19 @@ class NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     var model = NavBarItemModel(
       title: title,
       navigationPath: navigationPath,
     );
 
-    return GestureDetector(
-      onTap: () {
-        print(navigationPath + " button tapped");
-        // locator<NavigationService>().navigateTo(navigationPath);
-      },
-      child: Provider.value(
-        value: model,
-        child: NavBarItemTabletDesktop(),
-      ).showCursorOnHover,
-    );
+    return InkWell(
+        onTap: () {
+          print(navigationPath + " button tapped");
+          locator<NavigationService>().navigateTo(navigationPath);
+        },
+        child: Provider.value(
+          value: model,
+          child: NavBarItemTabletDesktop(),
+        ));
   }
 }

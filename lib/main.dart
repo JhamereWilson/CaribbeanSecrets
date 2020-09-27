@@ -1,16 +1,21 @@
+import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
+import 'package:caribbean_secrets_ecommerce/routing/router.dart';
 import 'package:caribbean_secrets_ecommerce/screens/checkout_screen.dart';
-import 'package:caribbean_secrets_ecommerce/screens/product_detail_screen.dart';
-import 'package:caribbean_secrets_ecommerce/views/video_view.dart';
+import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
+import 'package:caribbean_secrets_ecommerce/services/navigation_services.dart';
+import 'package:caribbean_secrets_ecommerce/views/home_view/home_view.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/layout_template/layout_template.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'locator.dart';
-import 'views/cart/cart_page.dart';
-import 'views/landing_page/single_page_purchase.dart';
+import 'screens/cart_screens/cart_screen.dart';
+
 
 void main() {
-  // setupLocator();
+setupLocator();
   runApp(MyApp());
 }
 
@@ -18,8 +23,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => Products(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => Products(),
+        ),
+        ChangeNotifierProvider(create: (ctx) => Cart()),
+      ],
       child: MaterialApp(
         title: 'Caribbean Secrets',
         debugShowCheckedModeBanner: false,
@@ -27,18 +37,11 @@ class MyApp extends StatelessWidget {
         //   primarySwatch: Colors.blue,
         //   visualDensity: VisualDensity.adaptivePlatformDensity,
         // ),
-        // builder: (context, child) => LayoutTemplate(child: child),
-        // key: locator<NavigationService>().navigatorKey,
-        // onGenerateRoute: generateRoute,
-        // initialRoute: HomeRoute,
-        // home: SinglePurchaseLandingPage(),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => SinglePurchaseLandingPage(),
-          '/cart': (context) => CartPage(),
-          '/checkout': (context) => CheckoutScreen(),
-          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
-        },
+        builder: (context, child) => LayoutTemplate(child: child),
+        key: locator<NavigationService>().navigatorKey,
+        onGenerateRoute: generateRoute,
+        initialRoute: HomeRoute,
+ 
       ),
     );
   }

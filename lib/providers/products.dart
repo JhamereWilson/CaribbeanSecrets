@@ -4,21 +4,21 @@ import 'package:flutter/material.dart';
 class Products with ChangeNotifier {
   List<Product> _oils = [
     Product(
-      id: "1",
+      id: 1,
       title: "Original Haitian Castor Oil",
       price: 20.00,
       imageUrl: "/images/CS1Bottle.png",
       description: "",
     ),
     Product(
-      id: "2",
+      id: 2,
       title: "Vanilla Haitian Castor Oil",
       price: 20.00,
       imageUrl: "/images/CS1Bottle.png",
       description: "",
     ),
     Product(
-      id: "3",
+      id: 3,
       title: "Peppermint Haitian Castor Oil",
       price: 20.00,
       imageUrl: "/images/CS1Bottle.png",
@@ -30,12 +30,8 @@ class Products with ChangeNotifier {
     return [..._oils];
   }
 
-  Product findById(String id) {
+  Product findById(int id) {
     return _oils.firstWhere((prod) => prod.id == id);
   }
 
-  void addProduct() {
-    //_items.add(value);
-    notifyListeners();
-  }
 }

@@ -12,11 +12,15 @@
   "engines": {
     "node": "10"
   },
+  "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.1",
-    "square-connect": "^4.20200826.3"
+    "square-connect": "^4.20200923.4"
   },
   "devDependencies": {
     "eslint": "^5.12.0",

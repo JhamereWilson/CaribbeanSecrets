@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 
 class AnimatedText extends StatefulWidget {
+  final double fontSize;
+
+  const AnimatedText({@required this.fontSize});
   @override
   _AnimatedTextState createState() => _AnimatedTextState();
 }
@@ -14,6 +17,9 @@ class _AnimatedTextState extends State<AnimatedText> {
   bool isBold = true;
   final random = Random();
   Timer _clockTimer;
+  
+
+  
 
   @override
   void initState() {
@@ -40,10 +46,10 @@ class _AnimatedTextState extends State<AnimatedText> {
           ? TextStyle(
               color: CaribbeanSecretsColors
                   .colors[random.nextInt(CaribbeanSecretsColors.colors.length)],
-              fontSize: 140,
+              fontSize: widget.fontSize,
               fontWeight: FontWeight.w900)
           : TextStyle(
-              fontSize: 140,
+              fontSize: widget.fontSize,
               color: Colors.white38,
               fontWeight: FontWeight.w800),
       duration: const Duration(milliseconds: 1500),

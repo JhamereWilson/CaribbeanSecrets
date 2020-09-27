@@ -1,36 +1,38 @@
-import 'package:caribbean_secrets_ecommerce/screens/product_detail_screen.dart';
+import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
+import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
+import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductItem extends StatelessWidget {
-  final String id;
-  final String title;
-  final double price;
-  final String imageUrl;
-
-  const ProductItem({this.id, this.title, this.price, this.imageUrl});
-
   @override
   Widget build(BuildContext context) {
+    var screenHeight = ScreenDimensions(context).screenHeight;
+    var screenWidth = ScreenDimensions(context).screenWidth;
+    final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     return GridTile(
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).pushNamed(ProductDetailScreen.routeName);
+          // Navigator.of(context)
+          //     .pushNamed(ProductDetailScreen.routeName, arguments: product.id);
         },
         child: Column(
           children: [
             Container(
-              height: 300,
-              width: 300,
-              margin: EdgeInsets.symmetric(horizontal: 50),
+              height: 200,
+              width: 200,
+              margin: EdgeInsets.symmetric(horizontal: screenWidth/10),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(imageUrl),
+                  image: AssetImage(product.imageUrl),
                 ),
               ),
             ),
             SizedBox(height: 5),
             Text(
-              title,
+              product.title,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -38,7 +40,7 @@ class ProductItem extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              price.toString(),
+              '\$' + '${product.price.toString()}' + ".00",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -69,7 +71,14 @@ class ProductItem extends StatelessWidget {
                     color: Colors.black,
                   ),
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      cart.addItem(product.id, product.price, product.title,
+                          product.imageUrl);
+                      print("ITEM ADDED TO CART:" +
+                          " Product Title: ${product.title}" +
+                          ", Product ID: ${product.id}" +
+                          ", IMAGE URL: ${product.imageUrl}");
+                    },
                     child: Text(
                       "ADD TO CART",
                       style: TextStyle(

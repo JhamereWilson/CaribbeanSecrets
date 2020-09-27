@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
@@ -7,18 +7,19 @@ import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailView extends StatelessWidget {
   final int quantityValue;
+  final int productId;
 
-  const ProductDetailScreen({this.quantityValue});
+  const ProductDetailView({this.quantityValue, this.productId});
 
   static const routeName = '/product-detail';
 
   @override
   Widget build(BuildContext context) {
-    final productId = ModalRoute.of(context).settings.arguments as String;
-    final loadedProduct = Provider.of<Products>(context, listen: false).findById(productId);  
-    //returns a product where the product IDs match --> NOTE: listen is false because this widget doesn't need to rebuild 
+    final loadedProduct =
+        Provider.of<Products>(context, listen: false).findById(productId);
+    //returns a product where the product IDs match --> NOTE: listen is false because this widget doesn't need to rebuild
     return Scaffold(
       backgroundColor: Colors.black,
       body: Column(children: [
