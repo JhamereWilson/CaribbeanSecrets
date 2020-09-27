@@ -1,5 +1,3 @@
-
-
 import 'package:caribbean_secrets_ecommerce/views/blog/blog_section.dart';
 import 'package:caribbean_secrets_ecommerce/views/products/product_section.dart';
 
@@ -25,7 +23,7 @@ class HomeContentMobile extends StatelessWidget {
         ModelPhotos(),
         SizedBox(height: 50),
         ProductSection(),
-        // Footer(),
+        //TODO: Find alternative method for Footers in Mobile
       ],
     );
   }

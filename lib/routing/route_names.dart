@@ -8,7 +8,4 @@ const String CartRoute = '/cart';
 const String CheckoutRoute = '/checkout';
 const String EpisodeDetailRoute = '/tv-episode';
 const String BlogDetailRoute = '/blog-post';
-
-
-
-
+const String LayoutRoute = '/layout-template';

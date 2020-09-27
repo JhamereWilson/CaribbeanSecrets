@@ -9,12 +9,14 @@ class SecretsTVView extends StatelessWidget {
       backgroundColor: Colors.black,
       body: ListView(
         children: [
-          // NavigationBar(),
+          
           CenteredView(
             child: Container(
               width: ScreenDimensions(context).screenWidth,
               height: ScreenDimensions(context).screenHeight,
-              color: Colors.yellow,
+              color: Colors.yellow[600],
+              child: Center(child: Text("Secrets TV Is On The Way!", style: TextStyle(color: Colors.black, fontSize: 90, fontWeight: FontWeight.w900),)),
+              //TODO: Create a List of Stacked Elements with Random (-100 through 100) positon
             ),
           ),
         ],

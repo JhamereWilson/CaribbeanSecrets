@@ -19,7 +19,7 @@ class AboutView extends StatelessWidget {
               color: Colors.red,
             ),
           ),
-         
+          Footer(),
         ],
       ),
     );

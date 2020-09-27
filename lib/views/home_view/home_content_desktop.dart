@@ -23,7 +23,7 @@ class HomeContentDesktop extends StatelessWidget {
         ModelPhotos(),
         SizedBox(height: 50),
         ProductSection(),
-        // Footer(),
+        Footer(),
       ],
     );
   }

@@ -6,6 +6,7 @@ import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/episodes_detail_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/layout_template/layout_template.dart';
 import 'package:flutter/material.dart';
 
 import 'route_names.dart';
@@ -14,6 +15,8 @@ import 'route_names.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   // var routingData = settings.name.getRoutingData;
   switch (settings.name) {
+    case LayoutRoute:
+      return _getPageRoute(LayoutTemplate(), settings);
     case HomeRoute:
       return _getPageRoute(HomeView(), settings);
     case ShopRoute:

@@ -17,7 +17,7 @@ class BlogView extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-       
+       Footer(),
         ],
       ),
     );

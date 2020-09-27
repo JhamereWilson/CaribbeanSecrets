@@ -58,7 +58,6 @@ class LayoutTemplate extends StatelessWidget {
                 ),
               ),
             ),
-            Footer(),
           ],
         ),
       ),
