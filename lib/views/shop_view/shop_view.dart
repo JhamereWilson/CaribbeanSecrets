@@ -1,4 +1,5 @@
-import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+
+import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +12,21 @@ class ShopView extends StatelessWidget {
         children: [
           // NavigationBar(),
           CenteredView(
-            child: Container(
-              width: ScreenDimensions(context).screenWidth,
-              height: ScreenDimensions(context).screenHeight,
-              color: Colors.green,
+            child: Column(
+              children: [
+                NavigationRow(
+                  currentPage: "Shop",
+                ),
+                SizedBox(height: 15),
+                Divider(
+                  height: 1,
+                  color: Colors.white,
+                  thickness: 0.5,
+                ),
+              ],
             ),
           ),
+          Footer(),
         ],
       ),
     );
