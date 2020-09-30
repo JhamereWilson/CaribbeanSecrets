@@ -65,34 +65,34 @@ class Orders with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addOrder(List<CartItemModel> cartProducts, double total) async {
-    final url =
-        'https://flutter-update.firebaseio.com';
-    final timestamp = DateTime.now();
-    final response = await http.post(
-      url,
-      body: json.encode({
-        'amount': total,
-        'dateTime': timestamp.toIso8601String(),
-        'products': cartProducts
-            .map((cp) => {
-                  'id': cp.id,
-                  'title': cp.title,
-                  'quantity': cp.quantity,
-                  'price': cp.price,
-                })
-            .toList(),
-      }),
-    );
-    _orders.insert(
-      0,
-      OrderItem(
-        id: json.decode(response.body)['name'],
-        amount: total,
-        dateTime: timestamp,
-        products: cartProducts,
-      ),
-    );
-    notifyListeners();
-  }
+  // Future<void> addOrder(List<CartItemModel> cartProducts, double total) async {
+  //   final url =
+  //       'https://flutter-update.firebaseio.com';
+  //   final timestamp = DateTime.now();
+  //   final response = await http.post(
+  //     url,
+  //     body: json.encode({
+  //       'amount': total,
+  //       'dateTime': timestamp.toIso8601String(),
+  //       'products': cartProducts
+  //           .map((cp) => {
+  //                 'id': cp.id,
+  //                 'title': cp.title,
+  //                 'quantity': cp.quantity,
+  //                 'price': cp.price,
+  //               })
+  //           .toList(),
+  //     }),
+  //   );
+  //   _orders.insert(
+  //     0,
+  //     OrderItem(
+  //       id: json.decode(response.body)['name'],
+  //       amount: total,
+  //       dateTime: timestamp,
+  //       products: cartProducts,
+  //     ),
+  //   );
+  //   notifyListeners();
+  // }
 }

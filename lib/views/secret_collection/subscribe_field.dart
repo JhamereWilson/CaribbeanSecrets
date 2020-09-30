@@ -1,13 +1,12 @@
 import 'dart:convert';
 
+import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class SubscribeField extends StatefulWidget {
-  final Function subscribeStatusChanged;
-
-  const SubscribeField({this.subscribeStatusChanged});
   @override
   _SubscribeFieldState createState() => _SubscribeFieldState();
 }
@@ -22,7 +21,9 @@ class _SubscribeFieldState extends State<SubscribeField> {
 
   @override
   Widget build(BuildContext context) {
+    final subscribe = Provider.of<Subscription>(context);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -95,43 +96,26 @@ class _SubscribeFieldState extends State<SubscribeField> {
                   color: Colors.white, width: 1, style: BorderStyle.solid)),
           child: FlatButton(
             onPressed: () async {
-              widget.subscribeStatusChanged();
-
-              // if (_formKey.currentState.validate()) {
-              //   _formKey.currentState.save();
-              //   final response = await http.post(
-              //     "https://us-central1-caribbean-secrets.cloudfunctions.net/createCustomer",
-              //     headers: {
-              //       'Content-Type': 'application/json; charset=UTF-8',
-              //       'Accept': 'application/json',
-              //       'Access-Control-Allow-Origin': '*',
-              //     },
-              //     body: jsonEncode({"email": email}),
-              //   );
-              //   if (response.statusCode == 200) {
-              //     setState(() {
-              //       sentResponse = "Check your email!";
-              //       isLoading = false;
-              //       _emailController.clear();
-
-              //       print(email);
-              //       print(response);
-              //     });
-              //   } else {
-              //     setState(() {
-              //       sentResponse = response.body;
-              //       isLoading = false;
-              //     });
-              //   }
-              // }
+              if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
+              }
+              setState(() {
+                isLoading = true;
+                subscribe.subscribeUser(email);
+              });
             },
-            child: Text(
-              "SUBSCRIBE",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                  fontSize: 18),
-            ),
+            child: isLoading
+                ? CircularProgressIndicator(
+                    backgroundColor: Colors.white,
+                    strokeWidth: 1,
+                  )
+                : Text(
+                    "SUBSCRIBE",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 18),
+                  ),
           ),
         ),
       ],

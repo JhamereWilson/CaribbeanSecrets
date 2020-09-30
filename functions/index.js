@@ -33,7 +33,7 @@ exports.createCustomer = functions.https.onRequest((req, res) => {
         try {
             console.log("adding user" + req.body);
             
-            await apiInstance.createCustomer({
+            await customersApiInstance.createCustomer({
                 email_address: email,
             });
             console.log(`Added user: ${email} to Customers`);

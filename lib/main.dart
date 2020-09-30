@@ -1,5 +1,6 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
+import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/views/splash_view.dart';
 
 import 'package:caribbean_secrets_ecommerce/widgets/layout_template/layout_template.dart';
@@ -8,10 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'locator.dart';
 
-
-
 void main() {
-setupLocator();
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -25,6 +24,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) => Products(),
         ),
         ChangeNotifierProvider(create: (ctx) => Cart()),
+        ChangeNotifierProvider(create: (ctx) => Subscription()),
       ],
       child: MaterialApp(
         title: 'Caribbean Secrets',
@@ -38,8 +38,6 @@ class MyApp extends StatelessWidget {
         // onGenerateRoute: generateRoute,
         // initialRoute: HomeRoute,
         home: LayoutTemplate(),
-        
- 
       ),
     );
   }
