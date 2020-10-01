@@ -4,7 +4,6 @@ import 'package:caribbean_secrets_ecommerce/widgets/navigation_bar/navbar_item_d
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 import '../../locator.dart';
 
 // ignore: unused_element
@@ -23,7 +22,7 @@ class NavBarItem extends StatelessWidget {
     return InkWell(
         onTap: () {
           print(navigationPath + " button tapped");
-          locator<NavigationService>().navigateTo(navigationPath);
+          Navigator.of(context).pushNamed(navigationPath);
         },
         child: Provider.value(
           value: model,

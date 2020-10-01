@@ -15,98 +15,105 @@ class SecretsTVView extends StatelessWidget {
     final episodes = episodesData.episodes;
     return Scaffold(
       backgroundColor: Colors.black,
-      body: ListView(
+      body: Column(
         children: [
-          NavigationRow(currentPage: "Secrets TV"),
-          Divider(
-            height: 1,
-            color: Colors.white,
-            thickness: 0.5,
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Row(
+          NavigationBar(),
+          Expanded(
+            child: ListView(
               children: [
-                Text(
-                  "Secrets",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 72,
-                      fontWeight: FontWeight.w100),
+                NavigationRow(currentPage: "Secrets TV"),
+                Divider(
+                  height: 1,
+                  color: Colors.white,
+                  thickness: 0.5,
                 ),
-                Text(
-                  "TV ",
-                  style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 72,
-                      fontWeight: FontWeight.w900),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 1000,
-            child: PageView(
-              scrollDirection: Axis.vertical,
-              // onSelectedItemChanged: ,
-              children: [
-                Container(
-                  child: Column(
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Row(
                     children: [
-                      Container(
-                        height: 600,
-                        child: VideoPlayer2(),
+                      Text(
+                        "Secrets",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 72,
+                            fontWeight: FontWeight.w100),
                       ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Episode 1:",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            "Welcome to the Family",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w100),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 15),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          "Scroll Down For More",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w100),
-                        ),
+                      Text(
+                        "TV ",
+                        style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 72,
+                            fontWeight: FontWeight.w900),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  height: 400,
-                  child: VideoPlayer3(),
+                  height: 1000,
+                  child: PageView(
+                    scrollDirection: Axis.vertical,
+                    // onSelectedItemChanged: ,
+                    children: [
+                      Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 600,
+                              child: VideoPlayer2(),
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Episode 1:",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                                Text(
+                                  "Welcome to the Family",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w100),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 15),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                "Scroll Down For More",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w100),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 400,
+                        child: VideoPlayer3(),
+                      ),
+                      Container(
+                        height: 400,
+                        child: VideoPlayer4(),
+                      ),
+                      Container(
+                        height: 400,
+                        child: VideoPlayer5(),
+                      ),
+                    ],
+                  ),
                 ),
-                Container(
-                  height: 400,
-                  child: VideoPlayer4(),
-                ),
-                Container(
-                  height: 400,
-                  child: VideoPlayer5(),
-                ),
+                Footer(),
               ],
             ),
           ),
-          Footer(),
         ],
       ),
     );

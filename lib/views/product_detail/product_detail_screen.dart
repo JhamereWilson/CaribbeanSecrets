@@ -1,7 +1,4 @@
-
-
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
-import 'package:lipsum/lipsum.dart' as lipsum;
 
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -170,7 +167,7 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    lipsum.createText(numParagraphs: 3, numSentences: 5),
+                    loadedProduct.description,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w100,
@@ -201,7 +198,7 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    lipsum.createText(numParagraphs: 1, numSentences: 5),
+                    loadedProduct.ingredients,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w100,

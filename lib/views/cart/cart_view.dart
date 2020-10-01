@@ -94,7 +94,7 @@ class CartView extends StatelessWidget {
           child: FlatButton(
               color: Colors.red,
               onPressed: () {
-               locator<NavigationService>().navigateTo(CheckoutRoute);
+              //  locator<NavigationService>().navigateTo(CheckoutRoute);
               },
               child: Text(
                 "Checkout",
