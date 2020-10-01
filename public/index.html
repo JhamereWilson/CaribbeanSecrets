@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="caribbean_secrets_ecommerce">
+  <link rel="apple-touch-icon" href="cs_tranparent_logo.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="cs_tranparent_logo.png"/>
+
+  <title>Caribbean Secrets Cosmetics</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body id="app-container">
+    <!-- STEP 1: ADD core Firebase JS SDK -->
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-functions.js"></script>
+  <!-- STEP 2: Initialize Firebase with configuration -->
+  <script>
+    // Your web app's Firebase configuration
+    // TODO ADD YOUR FIREBASE CONFIG
+    var firebaseConfig = {
+    apiKey: "AIzaSyBPzSqd1FYgzjPTkaCYLEEInO2LSJ-tKBk",
+    authDomain: "caribbean-secrets.firebaseapp.com",
+    databaseURL: "https://caribbean-secrets.firebaseio.com",
+    projectId: "caribbean-secrets",
+    storageBucket: "caribbean-secrets.appspot.com",
+    messagingSenderId: "182070418004",
+    appId: "1:182070418004:web:4900bfbc407c05bc8cebc1"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- Flutter Initialization-->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=2735181729');
+      });
+    }
+  </script>
+  <script src="main.dart.js?v=2735181729" type="application/javascript"></script>
+</body>
+</html>

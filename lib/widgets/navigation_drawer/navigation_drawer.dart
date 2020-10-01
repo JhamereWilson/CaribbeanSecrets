@@ -54,7 +54,7 @@ class NavigationDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w100),
                 ),
               ),
-              Divider(
+               Divider(
                 height: 0.25,
                 thickness: 0.25,
                 color: Colors.white,
