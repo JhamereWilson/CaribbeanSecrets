@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 
-class CastorOilView extends StatelessWidget {
-  const CastorOilView({
+class SecretCollectionShopViewDesktop extends StatefulWidget {
+  const SecretCollectionShopViewDesktop({
     Key key,
   }) : super(key: key);
 
   @override
+  _SecretCollectionShopViewDesktopState createState() =>
+      _SecretCollectionShopViewDesktopState();
+}
+
+class _SecretCollectionShopViewDesktopState extends State<SecretCollectionShopViewDesktop> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 800,
-      color: Colors.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             height: 800,
-            width: 400,
+            width: 600,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("/images/CS1Bottle.png"),
+                  image: AssetImage("/images/CSwebsite-35.jpg"),
                   fit: BoxFit.cover),
             ),
           ),
@@ -34,21 +39,28 @@ class CastorOilView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "Original",
+                    "Pre-Poo",
                     style: TextStyle(
                         color: Colors.white10,
                         fontSize: 120,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Peppermint",
+                    "Shampoo",
                     style: TextStyle(
                         color: Colors.white10,
                         fontSize: 120,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Vanilla",
+                    "Creme",
+                    style: TextStyle(
+                        color: Colors.white10,
+                        fontSize: 120,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Moisturizing\nMist",
                     style: TextStyle(
                         color: Colors.white10,
                         fontSize: 120,
@@ -66,22 +78,16 @@ class CastorOilView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Organic Haitian",
+                        "The\nSecret\nCollection",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 48,
                             fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        "Castor Oil",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold),
-                      ),
+                   
                       SizedBox(height: 10),
                       Text(
-                        "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
+                        "Caribbean Secrets' Secret Collection gives you all the products that you need for a healthy hair care regimen.",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 48,
@@ -121,7 +127,7 @@ class CastorOilView extends StatelessWidget {
                                 //     ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART: \$30.00",
+                                "ADD TO CART: \$100.00",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),

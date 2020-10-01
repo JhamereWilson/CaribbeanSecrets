@@ -2,6 +2,9 @@ import 'package:caribbean_secrets_ecommerce/views/views.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBarMobile extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffKey;
+
+  const NavigationBarMobile({Key key, this.scaffKey}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +26,7 @@ class NavigationBarMobile extends StatelessWidget {
               IconButton(
                 color: Colors.white,
                 iconSize: 36,
-                onPressed: () => Scaffold.of(context).openDrawer(),
+                onPressed: () => scaffKey.currentState.openDrawer(),
                 icon: Icon(Icons.menu),
               ),
             ],

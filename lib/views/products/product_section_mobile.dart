@@ -11,31 +11,31 @@ class ProductSectionMobile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 3,
-              width: 100,
+              height: 1.5,
+              width: 25,
               color: Colors.white70,
             ),
             SizedBox(
-              width: 10,
+              width: 5,
             ),
             Text(
               "Our Products",
               style: TextStyle(
                   color: Colors.white70,
-                  fontSize: 56,
+                  fontSize: 28,
                   fontWeight: FontWeight.w900),
             ),
             SizedBox(
-              width: 10,
+              width: 5,
             ),
             Container(
-              height: 3,
-              width: 100,
+              height: 1.5,
+              width: 25,
               color: Colors.white70,
             ),
           ],
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         // ------ CASTOR OILS
         Align(
           alignment: Alignment.center,
@@ -43,13 +43,13 @@ class ProductSectionMobile extends StatelessWidget {
             "All Natural Haitian Castor Oils",
             style: TextStyle(
                 color: Colors.white70,
-                fontSize: 36,
+                fontSize: 24,
                 fontWeight: FontWeight.w100),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Container(height: 250, child: Center(child: ProductsList())),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
 
         // -- SECRET COLLECTION/SUBSCRIPTION VIEW
         // SecretCollectionView(),

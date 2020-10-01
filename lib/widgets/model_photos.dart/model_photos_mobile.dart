@@ -10,8 +10,8 @@ class ModelPhotosMobile extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.all(2),
-              height: 350,
-              width: 700,
+              height: 87.5,
+              width: 175,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('/images/CSwebsite-10.jpg'),
@@ -23,8 +23,8 @@ class ModelPhotosMobile extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.all(2),
-                  height: 350,
-                  width: 350,
+                  height: 87.5,
+                  width: 87.5,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('/images/CSwebsite-3.jpg'),
@@ -34,8 +34,8 @@ class ModelPhotosMobile extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.all(2),
-                  height: 350,
-                  width: 350,
+                  height: 87.5,
+                  width: 87.5,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('/images/CSwebsite-28.jpg'),
@@ -49,8 +49,8 @@ class ModelPhotosMobile extends StatelessWidget {
         ),
         Container(
           margin: EdgeInsets.all(2),
-          height: 700,
-          width: 500,
+          height: 175,
+          width: 125,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('/images/CSwebsite-16.jpg'),

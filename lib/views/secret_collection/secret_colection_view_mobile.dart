@@ -1,19 +1,17 @@
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+import 'package:caribbean_secrets_ecommerce/views/secret_collection/subscription_view/subscription_view.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
 import 'package:caribbean_secrets_ecommerce/views/views.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../animated_text.dart';
-import 'subscription_view/subscription_view.dart';
 
-class SecretCollectionView extends StatelessWidget {
-  bool glowing = false;
+class SecretCollectionViewMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
-    var screen = ScreenDimensions(context);
     print(subscribe.isSubscribed);
     return AnimatedSwitcher(
         duration: Duration(seconds: 2),
@@ -23,7 +21,7 @@ class SecretCollectionView extends StatelessWidget {
                   Expanded(
                     // flex: 1,
                     child: Container(
-                      height: 800,
+                      height: 400,
                       child: Center(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +31,7 @@ class SecretCollectionView extends StatelessWidget {
                               "Can you keep a secret?",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 56,
+                                  fontSize: 24,
                                   fontWeight: FontWeight.w900),
                             ),
                             FlatButton(
@@ -42,7 +40,7 @@ class SecretCollectionView extends StatelessWidget {
                               child: Text("Shop",
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 56,
+                                      fontSize: 24,
                                       fontWeight: FontWeight.w900)),
                             )
                           ],
@@ -53,7 +51,7 @@ class SecretCollectionView extends StatelessWidget {
                   Expanded(
                     // flex: 2,
                     child: Container(
-                      height: 800,
+                      height: 400,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("/images/CSWebsite-33.jpg"),

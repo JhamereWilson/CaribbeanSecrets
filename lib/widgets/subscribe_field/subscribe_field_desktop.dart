@@ -1,17 +1,18 @@
 import 'dart:convert';
 
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-class SubscribeField extends StatefulWidget {
+class SubscribeFieldDesktop extends StatefulWidget {
   @override
-  _SubscribeFieldState createState() => _SubscribeFieldState();
+  _SubscribeFieldDesktopState createState() => _SubscribeFieldDesktopState();
 }
 
-class _SubscribeFieldState extends State<SubscribeField> {
+class _SubscribeFieldDesktopState extends State<SubscribeFieldDesktop> {
   TextEditingController _emailController = TextEditingController();
   String email;
   String sentResponse;
@@ -22,6 +23,8 @@ class _SubscribeFieldState extends State<SubscribeField> {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
+    num screenHeight = ScreenDimensions(context).screenHeight;
+    num screenWidth = ScreenDimensions(context).screenWidth;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -41,7 +44,7 @@ class _SubscribeFieldState extends State<SubscribeField> {
               },
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
+                  fontSize: 18,
                   fontWeight: FontWeight.w100),
               cursorColor: Colors.white,
               keyboardType: TextInputType.emailAddress,
@@ -71,8 +74,11 @@ class _SubscribeFieldState extends State<SubscribeField> {
                         color: Colors.white,
                         width: 1,
                         style: BorderStyle.solid)),
-                contentPadding:
-                    EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
+                contentPadding: EdgeInsets.only(
+                    left: screenWidth * .02,
+                    bottom: screenHeight * .0125,
+                    top: screenHeight * .0125,
+                    right: screenWidth * .02),
                 labelText: 'Enter Email Address',
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 labelStyle: TextStyle(
@@ -84,11 +90,11 @@ class _SubscribeFieldState extends State<SubscribeField> {
           ),
         ),
         SizedBox(
-          height: 40,
+          height: screenHeight * 0.025,
         ),
         Container(
-          height: 50,
-          width: 450,
+          height: screenHeight * .03,
+          width: screenWidth / 3,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.white12,

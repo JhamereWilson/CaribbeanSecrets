@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../animated_text.dart';
 import 'subscription_view/subscription_view.dart';
 
-class SecretCollectionView extends StatelessWidget {
+class SecretCollectionViewDesktop extends StatelessWidget {
   bool glowing = false;
   @override
   Widget build(BuildContext context) {

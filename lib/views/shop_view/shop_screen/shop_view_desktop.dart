@@ -3,7 +3,7 @@ import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class ShopView extends StatelessWidget {
+class ShopViewDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

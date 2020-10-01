@@ -24,8 +24,7 @@ class HeroViewMobile extends StatelessWidget {
         ),
         Positioned(
           top: 100,
-          right: 1,
-          child: AnimatedText(fontSize: 70),
+          child: AnimatedText(),
         ),
       ],
     );

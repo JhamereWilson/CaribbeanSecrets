@@ -12,7 +12,7 @@ import 'package:caribbean_secrets_ecommerce/views/home_view/home_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/episodes_detail_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_view.dart';
+import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_screen/shop_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/splash_view.dart';
 
 import 'package:caribbean_secrets_ecommerce/widgets/layout_template/layout_template.dart';
@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Caribbean Secrets',
         debugShowCheckedModeBanner: false,
+        
         // theme: ThemeData(
         //   primarySwatch: Colors.blue,
         //   visualDensity: VisualDensity.adaptivePlatformDensity,

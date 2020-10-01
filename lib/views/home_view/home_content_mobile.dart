@@ -12,21 +12,37 @@ class HomeContentMobile extends StatelessWidget {
   const HomeContentMobile({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        // NavigationBar(),
-        HeroView(),
-        SizedBox(height: 30),
-        Align(
-            alignment: Alignment.center,
-            child: LogoView(height: 300, width: 600)),
-        SizedBox(height: 30),
-        ModelPhotos(),
-        SizedBox(height: 50),
-        ProductSection(),
-        SecretCollectionView(),
-        //TODO: Find alternative method for Footers in Mobile
-      ],
+    var scaffoldKey = GlobalKey<ScaffoldState>();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      drawerEnableOpenDragGesture: false,
+      drawer: NavigationDrawer(),
+      key: scaffoldKey,
+      body: Column(
+        children: [
+          NavigationBarMobile(
+            scaffKey: scaffoldKey,
+          ),
+          Expanded(
+            child: ListView(
+              children: [
+            
+                HeroView(),
+                SizedBox(height: 15),
+                Align(
+                    alignment: Alignment.center,
+                    child: LogoView(height: 300, width: 600)),
+                SizedBox(height:15),
+                ModelPhotos(),
+                SizedBox(height: 25),
+                ProductSection(),
+                SecretCollectionView(),
+                //TODO: Find alternative method for Footers in Mobile
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

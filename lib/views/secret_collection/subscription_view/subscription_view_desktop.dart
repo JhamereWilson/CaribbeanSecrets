@@ -1,10 +1,10 @@
-import 'package:caribbean_secrets_ecommerce/views/secret_collection/subscribe_field.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/subscribe_button.dart';
 
 import 'package:flutter/material.dart';
 
-class SubscriptionView extends StatelessWidget {
-  const SubscriptionView({Key key}) : super(key: key);
+class SubscriptionViewDesktop extends StatelessWidget {
+  const SubscriptionViewDesktop({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

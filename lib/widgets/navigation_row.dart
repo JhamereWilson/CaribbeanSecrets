@@ -10,31 +10,34 @@ class NavigationRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          HoverableNavigationButton(
-            text: "Home",
-            color: Colors.white,
-            fontSize: 18,
-            routeName: "",
-            hoverColor: Colors.red,
-            fontWeight: FontWeight.w100,
-          ),
-          SizedBox(width: 5),
-          Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.white,
-            size: 12,
-          ),
-          SizedBox(width: 5),
-          Text(
-            currentPage,
-            style: TextStyle(
-                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w300),
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            HoverableNavigationButton(
+              text: "Home",
+              color: Colors.white,
+              fontSize: 18,
+              routeName: "",
+              hoverColor: Colors.red,
+              fontWeight: FontWeight.w100,
+            ),
+            SizedBox(width: 5),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.white,
+              size: 12,
+            ),
+            SizedBox(width: 5),
+            Text(
+              currentPage,
+              style: TextStyle(
+                  color: Colors.white, fontSize: 18, fontWeight: FontWeight.w300),
+            ),
+          ],
+        ),
       ),
     );
   }

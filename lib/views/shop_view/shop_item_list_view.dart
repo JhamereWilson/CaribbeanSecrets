@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/products/products_list.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
 
 import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_collection_shop_view.dart';
@@ -10,33 +11,25 @@ import 'package:provider/provider.dart';
 
 import 'castor_oil/castor_oil_shop_view.dart';
 
-class ShopItemPageView extends StatefulWidget {
-  ShopItemPageView({Key key}) : super(key: key);
+class ShopItemListView extends StatefulWidget {
+  ShopItemListView({Key key}) : super(key: key);
 
   @override
-  _ShopItemPageViewState createState() => _ShopItemPageViewState();
+  _ShopItemListViewState createState() => _ShopItemListViewState();
 }
 
-class _ShopItemPageViewState extends State<ShopItemPageView> {
+class _ShopItemListViewState extends State<ShopItemListView> {
   PageController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = PageController();
-    // pageController
-    //     .addListener(updatePageState); // add listener to page controller.
-  }
 
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
-    return PageView(
+    return ListView(
         scrollDirection: Axis.vertical,
         controller: controller,
         physics: BouncingScrollPhysics(),
         children: [
-          CastorOilView(),
+          ProductsList(),
           AnimatedSwitcher(
             duration: Duration(seconds: 2),
             child: subscribe.isSubscribed

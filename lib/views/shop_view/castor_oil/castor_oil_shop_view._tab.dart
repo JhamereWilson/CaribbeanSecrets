@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
 
-class SecretCollectionShopView extends StatefulWidget {
-  const SecretCollectionShopView({
+class CastorOilViewTablet extends StatelessWidget {
+  const CastorOilViewTablet({
     Key key,
   }) : super(key: key);
 
   @override
-  _SecretCollectionShopViewState createState() =>
-      _SecretCollectionShopViewState();
-}
-
-class _SecretCollectionShopViewState extends State<SecretCollectionShopView> {
-  @override
   Widget build(BuildContext context) {
     return Container(
-      height: 800,
+      height: 600,
+      color: Colors.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            height: 800,
-            width: 600,
+            height: 600,
+            width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("/images/CSwebsite-35.jpg"),
+                  image: AssetImage("/images/CS1Bottle.png"),
                   fit: BoxFit.cover),
             ),
           ),
           Container(
-            height: 500,
+            height: 250,
             color: Colors.white,
             width: 1,
           ),
@@ -39,31 +34,24 @@ class _SecretCollectionShopViewState extends State<SecretCollectionShopView> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "Pre-Poo",
+                    "Original",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 120,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Shampoo",
+                    "Peppermint",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 120,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Creme",
+                    "Vanilla",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 120,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Moisturizing\nMist",
-                    style: TextStyle(
-                        color: Colors.white10,
-                        fontSize: 120,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -78,22 +66,28 @@ class _SecretCollectionShopViewState extends State<SecretCollectionShopView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "The\nSecret\nCollection",
+                        "Organic Haitian",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 48,
+                            fontSize: 32,
                             fontWeight: FontWeight.bold),
                       ),
-                   
-                      SizedBox(height: 10),
                       Text(
-                        "Caribbean Secrets' Secret Collection gives you all the products that you need for a healthy hair care regimen.",
+                        "Castor Oil",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 48,
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
                             fontWeight: FontWeight.w200),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
                       Container(
                         height: 50,
                         width: 250,
@@ -127,10 +121,11 @@ class _SecretCollectionShopViewState extends State<SecretCollectionShopView> {
                                 //     ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART: \$100.00",
+                                "ADD TO CART: \$30.00",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12),
                               ),
                             ),
                           ),
