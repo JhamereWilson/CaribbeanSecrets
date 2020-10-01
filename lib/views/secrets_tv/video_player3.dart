@@ -19,12 +19,12 @@ class _VideoPlayer3State extends State<VideoPlayer3>
     // Create an store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _vController3 = VideoPlayerController.asset('videos/tv2.MP4');
+    _vController3 = VideoPlayerController.asset('videos/loyal.MP4');
     _initializeVideoPlayerFuture = _vController3.initialize();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // mutes the video
-      _vController3.setVolume(0);
+      _vController3.setVolume(1);
       // Plays the video once the widget is build and loaded.
       _vController3.play();
     });

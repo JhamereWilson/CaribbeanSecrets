@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayer2 extends StatefulWidget {
+  const VideoPlayer2({
+    Key key,
+  }) : super(key: key);
   @override
   _VideoPlayer2State createState() => _VideoPlayer2State();
 }
@@ -19,12 +22,12 @@ class _VideoPlayer2State extends State<VideoPlayer2>
     // Create an store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _vController2 = VideoPlayerController.asset('videos/tv1.MP4');
+    _vController2 = VideoPlayerController.asset('videos/the_brothers.mov');
     _initializeVideoPlayerFuture = _vController2.initialize();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // mutes the video
-      _vController2.setVolume(0);
+      _vController2.setVolume(1.0);
       // Plays the video once the widget is build and loaded.
       _vController2.play();
     });
@@ -36,7 +39,6 @@ class _VideoPlayer2State extends State<VideoPlayer2>
   void dispose() {
     // Ensure disposing of the VideoPlayerController to free up resources.
     _vController2.dispose();
-
     super.dispose();
   }
 

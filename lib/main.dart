@@ -1,4 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
+import 'package:caribbean_secrets_ecommerce/providers/episodes.dart';
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/views/splash_view.dart';
@@ -20,11 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (ctx) => Products(),
-        ),
+        ChangeNotifierProvider(create: (ctx) => Products()),
         ChangeNotifierProvider(create: (ctx) => Cart()),
         ChangeNotifierProvider(create: (ctx) => Subscription()),
+        ChangeNotifierProvider(create: (ctx) => Episodes())
       ],
       child: MaterialApp(
         title: 'Caribbean Secrets',

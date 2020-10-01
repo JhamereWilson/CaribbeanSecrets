@@ -31,7 +31,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       int data = settings.arguments;
       return _getPageRoute(
           EpisodeDetailView(
-            productId: data,
+            id: data,
           ),
           settings);
     case CartRoute:

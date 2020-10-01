@@ -24,7 +24,7 @@ class _VideoPlayer4State extends State<VideoPlayer4>
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // mutes the video
-      _vController4.setVolume(0);
+      _vController4.setVolume(1);
       // Plays the video once the widget is build and loaded.
       _vController4.play();
     });

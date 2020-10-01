@@ -43,9 +43,6 @@ class LayoutTemplate extends StatelessWidget {
         backgroundColor: Colors.black,
         body: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
             NavigationBar(),
             Expanded(
               child: Container(
