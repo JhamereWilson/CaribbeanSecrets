@@ -8,6 +8,10 @@
 .buildlog/
 .history
 .svn/
+assets/videos/tv2.mp4
+assets/videos/tv3.mp4
+assets/videos/tv4.mp4
+assets/videos/digital_wall.mp4
 
 # IntelliJ related
 *.iml
