@@ -9,15 +9,12 @@ class CastorOilItemPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
     final products = productsData.oils;
-    PageController _controller =
-        PageController(initialPage: 0, viewportFraction: 0.85);
 
     return PageView.builder(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
       itemCount: products.length,
-      controller: _controller,
-      itemBuilder: (ctx, i) => Provider.value(
+      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
         value: products[i],
         child: CatorOilPageItem(),
       ),
