@@ -43,7 +43,7 @@ class Products with ChangeNotifier {
       imageUrl: "/images/CSwebsite-40.jpg",
       description:
           "Step 1: Apply Pre-Poo before shampooing to reinforce your hair fibers with polar oils. Applying Pre-poo before shampooing and showering makes your hair stronger and more durable, minimizing hair breakage and dryness. ",
-      threeDetails: [],
+      threeDetails: ["CASTOR OIL", "COCONUT", "HEMP SEED"],
       ingredients:
           "Pure Unrefined Haitian Castor Oil, Hemp Seed Oil, Coconut Oil",
     ),
@@ -56,7 +56,7 @@ class Products with ChangeNotifier {
           "Step 2: Apply Shampoo at least once a month to gently cleanse your hair, remove dust, dirt, oil, and other debris from your hair without stipping it bare of its natural oils. Our shampoo is sulfate-free so your hair will thank you.",
       ingredients:
           "Distilled Water, Cocoamidopropyl Betaine, Sodium Cocoamphodiacetate, Decyl Glucoside, DL-Pathenol, Yucca Extract, Hibiscus Powder, Aloe Vera Gel, Honey, Peppermint Oil, Eucalyptus, Thyme, Citric Acid",
-      threeDetails: [],
+      threeDetails: ["THYME", "PEPPERMINT", "HIBISCUS"],
     ),
     Product(
       id: 6,
@@ -67,18 +67,18 @@ class Products with ChangeNotifier {
           "Step 3: Apply Crème after shampooing to replenish your hair strands with the perfect combination of proteins and healthy fats to enhance your curl pattern and overall hair health.",
       ingredients:
           "Distilled Water, Raw Whole Flaxseed Gel, Organic Coconut Milk, Aloe Vera Gel, Organic Creamed Honey, Organic Coconut Oil, Shea Butter, Avocado Butter, Olive Oil, Cranberry Seed Oil, Haitian Castor Oil, Cetearyl Alcohol, DL-Pathenol, Potassium Sorbate, Lactic Acid, Fragrance",
-      threeDetails: [],
+      threeDetails: ["SHEA", "ALOE VERA", "CRANBERRY"],
     ),
     Product(
       id: 7,
       title: "Moisturizing Mist",
       price: 25.00,
-      imageUrl: "/images/CSwebsite-37.jpg",
+      imageUrl: "/images/CSwebsite-35.jpg",
       description:
           "Apply Moisturizing Mist daily to reinvigorate your hair strands, making them moisturized and shiny. Use daily.",
       ingredients:
           "Distilled Water, Aloe Vera Gel, Polysorbate 60, Olive Oil, Haitian Castr Oil, Honey, DL-Pathenol, Potassium Sorbate",
-      threeDetails: [],
+      threeDetails: ["H20", "HONEY", "OLIVE"],
     ),
   ];
 

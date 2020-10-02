@@ -10,6 +10,11 @@ class Footer extends StatelessWidget {
       height: 175,
       child: Column(
         children: [
+          Divider(
+            height: 1,
+            color: Colors.white,
+            thickness: 0.5,
+          ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
