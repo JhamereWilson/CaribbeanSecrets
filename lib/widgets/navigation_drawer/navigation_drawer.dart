@@ -75,7 +75,7 @@ class NavigationDrawer extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.w100)),
-            onTap: () => Navigator.of(context).pushNamed(BlogRoute),
+            onTap: () => Navigator.of(context).pushNamed(CollectionRoute),
           ),
           ListTile(
             title: Text("Our Story",

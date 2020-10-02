@@ -121,7 +121,7 @@ class CastorOilPageItemTablet extends StatelessWidget {
                                     ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART:  \$ + ${product.price.toString()} + .00",
+                                "ADD TO CART: \$${product.price.toString()}.00",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400,

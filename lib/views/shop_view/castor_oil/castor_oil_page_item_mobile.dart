@@ -1,4 +1,7 @@
+import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
+import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CastorOilPageItemMobile extends StatelessWidget {
   const CastorOilPageItemMobile({
@@ -7,6 +10,8 @@ class CastorOilPageItemMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     return Container(
       height: 400,
       color: Colors.black,
@@ -112,15 +117,15 @@ class CastorOilPageItemMobile extends StatelessWidget {
                             ),
                             child: FlatButton(
                               onPressed: () {
-                                // cart.addItem(product.id, product.price, product.title,
-                                //     product.imageUrl);
-                                // print("ITEM ADDED TO CART:" +
-                                //     " Product Title: ${product.title}" +
-                                //     ", Product ID: ${product.id}" +
-                                //     ", IMAGE URL: ${product.imageUrl}");
+                                cart.addItem(product.id, product.price,
+                                    product.title, product.imageUrl);
+                                print("ITEM ADDED TO CART:" +
+                                    " Product Title: ${product.title}" +
+                                    ", Product ID: ${product.id}" +
+                                    ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART: \$30.00",
+                                "ADD TO CART: \$${product.price.toString()}.00",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),

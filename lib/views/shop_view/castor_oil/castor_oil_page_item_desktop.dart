@@ -11,7 +11,7 @@ class CastorOilPageItemDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = ScreenDimensions(context).screenWidth;
+    
     final product = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
     return Container(
@@ -122,7 +122,7 @@ class CastorOilPageItemDesktop extends StatelessWidget {
                                     ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART:  \$ + ${product.price.toString()} + .00",
+                                "ADD TO CART: \$${product.price.toString()}.00",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),

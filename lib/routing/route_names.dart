@@ -1,7 +1,7 @@
 const String HomeRoute = '/home';
-const String ShopRoute = '/shop';
+const String ShopRoute = '/shop-oils';
 const String AboutRoute = '/about';
-const String BlogRoute = '/blog';
+const String CollectionRoute = '/shop-collection';
 const String SecretsTVRoute = '/tv';
 const String ProductDetailRoute = '/product';
 const String CartRoute = '/cart';

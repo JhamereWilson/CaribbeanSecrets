@@ -1,5 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
-import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'castor_oil/castor_oil_page_item.dart';
@@ -9,10 +9,14 @@ class CastorOilItemPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
     final products = productsData.oils;
-    final subscribe = Provider.of<Subscription>(context);
+    PageController _controller =
+        PageController(initialPage: 0, viewportFraction: 0.85);
+
     return PageView.builder(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
+      itemCount: products.length,
+      controller: _controller,
       itemBuilder: (ctx, i) => Provider.value(
         value: products[i],
         child: CatorOilPageItem(),
