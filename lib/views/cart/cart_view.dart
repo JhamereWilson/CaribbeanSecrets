@@ -78,22 +78,7 @@ class CartView extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: 400,
-            height: 35,
-            child: FlatButton(
-                color: Colors.red,
-                onPressed: () {
-                  //  locator<NavigationService>().navigateTo(CheckoutRoute);
-                },
-                child: Text(
-                  "Checkout",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300),
-                )),
-          ),
+    
         ],
       ),
     );

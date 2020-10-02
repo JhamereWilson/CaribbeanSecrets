@@ -1,5 +1,10 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:caribbean_secrets_ecommerce/models/cart_item_model.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
 
 class Cart with ChangeNotifier {
   String timeDate = DateTime.now().toString();
@@ -126,4 +131,6 @@ class Cart with ChangeNotifier {
     _items = {};
     notifyListeners();
   }
+
+ 
 }

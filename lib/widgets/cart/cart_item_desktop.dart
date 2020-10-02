@@ -59,27 +59,16 @@ class CartItemDesktop extends StatelessWidget {
                 width: 10,
               ),
               Container(
-                height: 200,
-                width: 125,
-                child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w200),
-                    ),
-                    Text(
-                      "12.0 oz",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100),
-                    ),
-                  ],
+                height: 100,
+                width: 200,
+                child: Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200),
+                  ),
                 ),
               ),
               Column(
