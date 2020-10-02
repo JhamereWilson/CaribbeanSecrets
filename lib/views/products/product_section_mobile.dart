@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class ProductSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Column(
+    return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -55,6 +54,6 @@ class ProductSectionMobile extends StatelessWidget {
         // SecretCollectionView(),
         // SizedBox(height: 50),
       ],
-    ));
+    );
   }
 }

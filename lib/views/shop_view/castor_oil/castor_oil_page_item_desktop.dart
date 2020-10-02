@@ -1,20 +1,28 @@
+import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
+import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class CastorOilViewMobile extends StatelessWidget {
-  const CastorOilViewMobile({
+class CastorOilPageItemDesktop extends StatelessWidget {
+  const CastorOilPageItemDesktop({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = ScreenDimensions(context).screenWidth;
+    final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     return Container(
-      height: 400,
+      height: 800,
       color: Colors.black,
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            height: 200,
-            width: 200,
+            height: 800,
+            width: 400,
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("/images/CS1Bottle.png"),
@@ -22,7 +30,7 @@ class CastorOilViewMobile extends StatelessWidget {
             ),
           ),
           Container(
-            height: 125,
+            height: 500,
             color: Colors.white,
             width: 1,
           ),
@@ -33,24 +41,24 @@ class CastorOilViewMobile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "Original",
+                    product.threeDetails[0],
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 45,
+                        fontSize: 120,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Peppermint",
+                    product.threeDetails[1],
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 45,
+                        fontSize: 120,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Vanilla",
+                    product.threeDetails[2],
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 45,
+                        fontSize: 120,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -65,14 +73,8 @@ class CastorOilViewMobile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Organic Haitian",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Castor Oil",
+                        product.title,
+                        maxLines: 2,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 48,
@@ -80,7 +82,7 @@ class CastorOilViewMobile extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
+                        product.description,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 48,
@@ -112,15 +114,15 @@ class CastorOilViewMobile extends StatelessWidget {
                             ),
                             child: FlatButton(
                               onPressed: () {
-                                // cart.addItem(product.id, product.price, product.title,
-                                //     product.imageUrl);
-                                // print("ITEM ADDED TO CART:" +
-                                //     " Product Title: ${product.title}" +
-                                //     ", Product ID: ${product.id}" +
-                                //     ", IMAGE URL: ${product.imageUrl}");
+                                cart.addItem(product.id, product.price,
+                                    product.title, product.imageUrl);
+                                print("ITEM ADDED TO CART:" +
+                                    " Product Title: ${product.title}" +
+                                    ", Product ID: ${product.id}" +
+                                    ", IMAGE URL: ${product.imageUrl}");
                               },
                               child: Text(
-                                "ADD TO CART: \$30.00",
+                                "ADD TO CART:  \$ + ${product.price.toString()} + .00",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),

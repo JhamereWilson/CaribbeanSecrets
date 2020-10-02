@@ -11,29 +11,23 @@ class ShopViewDesktop extends StatelessWidget {
       body: Column(
         children: [
           NavigationBar(),
-          Expanded(
-                      child: ListView(
+          CenteredView(
+            child: Column(
               children: [
-                CenteredView(
-                  child: Column(
-                    children: [
-                      NavigationRow(
-                        currentPage: "Shop",
-                      ),
-                      SizedBox(height: 15),
-                      Divider(
-                        height: 1,
-                        color: Colors.white,
-                        thickness: 0.5,
-                      ),
-                      Container(height: 800, child: ShopItemPageView()),
-                    ],
-                  ),
+                NavigationRow(
+                  currentPage: "Shop",
                 ),
-                Footer(),
+                SizedBox(height: 15),
+                Divider(
+                  height: 1,
+                  color: Colors.white,
+                  thickness: 0.5,
+                ),
+                Container(height: 800, child: CastorOilItemPageView()),
               ],
             ),
           ),
+          Footer(),
         ],
       ),
     );

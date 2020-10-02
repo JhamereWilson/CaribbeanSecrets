@@ -3,13 +3,10 @@ import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/products/products_list.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
-
 import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_collection_shop_view.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'castor_oil/castor_oil_shop_view.dart';
 
 class ShopItemListView extends StatefulWidget {
   ShopItemListView({Key key}) : super(key: key);

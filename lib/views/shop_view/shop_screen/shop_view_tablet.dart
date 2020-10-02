@@ -16,19 +16,13 @@ class ShopViewTablet extends StatelessWidget {
           NavigationRow(
             currentPage: "Shop",
           ),
-          Expanded(
-            child: ListView(
-              children: [
-                SizedBox(height: 15),
-                Divider(
-                  height: 1,
-                  color: Colors.white,
-                  thickness: 0.5,
-                ),
-                Container(height: 600, child: ShopItemPageView()),
-              ],
-            ),
+          SizedBox(height: 15),
+          Divider(
+            height: 1,
+            color: Colors.white,
+            thickness: 0.5,
           ),
+          Container(height: 600, child: CastorOilItemPageView()),
           Footer(),
         ],
       ),

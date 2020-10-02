@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CastorOilViewTablet extends StatelessWidget {
-  const CastorOilViewTablet({
+class CastorOilPageItemMobile extends StatelessWidget {
+  const CastorOilPageItemMobile({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 400,
       color: Colors.black,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: [
           Container(
-            height: 600,
+            height: 200,
             width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -23,7 +22,7 @@ class CastorOilViewTablet extends StatelessWidget {
             ),
           ),
           Container(
-            height: 250,
+            height: 125,
             color: Colors.white,
             width: 1,
           ),
@@ -37,21 +36,21 @@ class CastorOilViewTablet extends StatelessWidget {
                     "Original",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 60,
+                        fontSize: 45,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Peppermint",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 60,
+                        fontSize: 45,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Vanilla",
                     style: TextStyle(
                         color: Colors.white10,
-                        fontSize: 60,
+                        fontSize: 45,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -69,25 +68,25 @@ class CastorOilViewTablet extends StatelessWidget {
                         "Organic Haitian",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 32,
+                            fontSize: 48,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         "Castor Oil",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 32,
+                            fontSize: 48,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 10),
                       Text(
                         "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 32,
+                            fontSize: 48,
                             fontWeight: FontWeight.w200),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 20),
                       Container(
                         height: 50,
                         width: 250,
@@ -124,8 +123,7 @@ class CastorOilViewTablet extends StatelessWidget {
                                 "ADD TO CART: \$30.00",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12),
+                                    fontWeight: FontWeight.w400),
                               ),
                             ),
                           ),
