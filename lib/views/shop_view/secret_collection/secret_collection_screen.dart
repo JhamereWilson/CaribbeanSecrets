@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
+import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
 import 'package:caribbean_secrets_ecommerce/shared/fade_in.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/views/secret_collection/secret_collection_view.dart';
@@ -101,14 +102,14 @@ class SecretCollectionScreen extends StatelessWidget {
               subscribe.isSubscribed
                   ? Align(
                       alignment: Alignment.center,
-                      child: Text(
-                        "Swipe right to learn more.",
-                        style: TextStyle(
-                            color: Colors.white.withOpacity(0.4),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w100),
-                      ),
-                    )
+                      child: BlinkingText(
+                          fontSize: 12,
+                          text: "Swipe Right to Learn More",
+                          fontWeight1: FontWeight.w100,
+                          fontWeight2: FontWeight.w100,
+                          color1: Colors.white,
+                          color2: Colors.white.withOpacity(0.2),
+                          duration: Duration(seconds: 2)))
                   : Align(
                       alignment: Alignment.center,
                       child: Text(

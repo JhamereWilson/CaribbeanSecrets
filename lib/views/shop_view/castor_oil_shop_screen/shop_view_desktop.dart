@@ -1,4 +1,7 @@
+import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
+import 'package:caribbean_secrets_ecommerce/views/animated_text.dart';
 import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_items_view.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/animated_text/animated_text_desktop.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +24,15 @@ class ShopViewDesktop extends StatelessWidget {
                       NavigationRow(
                         currentPage: "Shop",
                       ),
-                      Text("Scroll Down", style: TextStyle(color: Colors.white.withOpacity(0.3), fontWeight: FontWeight.w100, fontSize: 14),)
+                      BlinkingText(
+                        fontSize: 12,
+                        text: "Scroll Down",
+                        fontWeight1: FontWeight.w100,
+                        fontWeight2: FontWeight.w200,
+                        duration: Duration(seconds: 2),
+                        color1: Colors.white,
+                        color2: Colors.white.withOpacity(0.2),
+                      ),
                     ],
                   ),
                   SizedBox(height: 15),

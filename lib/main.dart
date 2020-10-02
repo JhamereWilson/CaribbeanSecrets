@@ -13,11 +13,13 @@ import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/episodes_detail_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_collection_screen.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_screen/shop_view.dart';
+
 
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'views/shop_view/castor_oil_shop_screen/shop_view.dart';
 
 
 
