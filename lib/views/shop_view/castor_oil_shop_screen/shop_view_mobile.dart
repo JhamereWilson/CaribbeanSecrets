@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 class ShopViewMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          NavigationBarMobile(),
+          NavigationBarMobile(scaffKey: scaffoldKey,),
           Expanded(
             child: ListView(
               children: [

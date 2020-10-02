@@ -14,7 +14,7 @@ class SecretCollectionPageItemMobile extends StatelessWidget {
     final product = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
     return Container(
-      height: 400,
+      height: 800,
       color: Colors.black,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,50 +71,17 @@ class SecretCollectionPageItemMobile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          Text(
-            product.description,
-            style: TextStyle(
-                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w200),
-          ),
-          SizedBox(height: 20),
-          Container(
-            height: 40,
-            width: 125,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.red,
-                Colors.orange,
-                Colors.yellow,
-                Colors.green,
-                Colors.teal,
-                Colors.blue,
-                Colors.purple,
-                Colors.deepPurple
-              ]),
-              borderRadius: BorderRadius.circular(32),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: Colors.black,
-                ),
-                child: FlatButton(
-                  onPressed: () {
-                    cart.addItem(product.id, product.price, product.title,
-                        product.imageUrl);
-                    print("ITEM ADDED TO CART:" +
-                        " Product Title: ${product.title}" +
-                        ", Product ID: ${product.id}" +
-                        ", IMAGE URL: ${product.imageUrl}");
-                  },
-                  child: Text(
-                    "ADD TO CART: \$${product.price.toString()}.00",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w400),
-                  ),
-                ),
+          Expanded(
+                      child: Container(
+              padding: EdgeInsets.all(8),
+              height: 100,
+              width: ScreenDimensions(context).screenWidth,
+              child: Text(
+                product.description,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w100),
               ),
             ),
           ),

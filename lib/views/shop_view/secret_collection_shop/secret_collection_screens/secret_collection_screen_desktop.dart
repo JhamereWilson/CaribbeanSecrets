@@ -22,6 +22,7 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
+    final cart = Provider.of<Cart>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.black,
       floatingActionButton: FloatingActionButton(
@@ -125,6 +126,46 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
                       child: SecretCollectionPageView())
                   : SubscribeField(),
               SizedBox(height: 60),
+              subscribe.isSubscribed
+                  ? Container(
+                      height: 50,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Colors.red,
+                          Colors.orange,
+                          Colors.yellow,
+                          Colors.green,
+                          Colors.teal,
+                          Colors.blue,
+                          Colors.purple,
+                          Colors.deepPurple
+                        ]),
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(32),
+                            color: Colors.black,
+                          ),
+                          child: FlatButton(
+                            onPressed: () {
+                              cart.addItem(9, 100, "The Secret Collection",
+                                  "/images/entire_collection.png");
+                            },
+                            child: Text(
+                              "ADD TO CART: \$100.00",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : Container(),
               Footer(),
             ],
           )),

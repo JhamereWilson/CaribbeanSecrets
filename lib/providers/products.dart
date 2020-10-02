@@ -75,7 +75,7 @@ class Products with ChangeNotifier {
       price: 25.00,
       imageUrl: "/images/entire_collection.png",
       description:
-          "Apply Moisturizing Mist daily to reinvigorate your hair strands, making them moisturized and shiny. Use daily.",
+          "Step 4: Apply Moisturizing Mist daily to reinvigorate your hair strands, making them moisturized and shiny. Use daily.",
       ingredients:
           "Distilled Water, Aloe Vera Gel, Polysorbate 60, Olive Oil, Haitian Castr Oil, Honey, DL-Pathenol, Potassium Sorbate",
       threeDetails: ["H20", "HONEY", "OLIVE"],

@@ -22,11 +22,14 @@ class SecretCollectionScreenMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
+    final cart = Provider.of<Cart>(context, listen: false);
+    var scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       backgroundColor: Colors.black,
+      key: scaffoldKey,
       body: Column(
         children: [
-          NavigationBar(),
+          NavigationBarMobile(scaffKey: scaffoldKey),
           Expanded(
               child: ListView(
             children: [
@@ -106,6 +109,47 @@ class SecretCollectionScreenMobile extends StatelessWidget {
                       child: SecretCollectionPageView())
                   : SubscribeField(),
               SizedBox(height: 30),
+              subscribe.isSubscribed
+                  ? Container(
+                      height: 40,
+                      width: 125,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Colors.red,
+                          Colors.orange,
+                          Colors.yellow,
+                          Colors.green,
+                          Colors.teal,
+                          Colors.blue,
+                          Colors.purple,
+                          Colors.deepPurple
+                        ]),
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(32),
+                            color: Colors.black,
+                          ),
+                          child: FlatButton(
+                            onPressed: () {
+                              cart.addItem(9, 100, "The Secret Collection",
+                                  "/images/entire_collection.png");
+                            },
+                            child: Text(
+                              "ADD TO CART: \$100.00",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : Container(),
+              SizedBox(height: 10),
             ],
           )),
         ],
