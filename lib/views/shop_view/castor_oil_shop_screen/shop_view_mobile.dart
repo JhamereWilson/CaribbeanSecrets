@@ -1,3 +1,5 @@
+import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
+import 'package:caribbean_secrets_ecommerce/views/cart/cart_view_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_items_view.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
@@ -10,16 +12,38 @@ class ShopViewMobile extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.black,
+      drawerEnableOpenDragGesture: false,
+      drawer: NavigationDrawer(),
+      endDrawer: CartDrawer(),
       body: Column(
         children: [
-          NavigationBarMobile(scaffKey: scaffoldKey,),
+          NavigationBarMobile(
+            scaffKey: scaffoldKey,
+          ),
           Expanded(
             child: ListView(
               children: [
                 Column(
                   children: [
-                    NavigationRow(
-                      currentPage: "Shop",
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NavigationRow(
+                          currentPage: "Shop",
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: BlinkingText(
+                            fontSize: 10,
+                            text: "Scroll Down",
+                            fontWeight1: FontWeight.w100,
+                            fontWeight2: FontWeight.w200,
+                            duration: Duration(seconds: 2),
+                            color1: Colors.white,
+                            color2: Colors.white.withOpacity(0.2),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 15),
                     Divider(

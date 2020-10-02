@@ -10,16 +10,15 @@ import 'package:caribbean_secrets_ecommerce/views/cart/cart_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/checkout/checkout_screen.dart';
 import 'package:caribbean_secrets_ecommerce/views/home_view/home_view.dart';
 import 'package:caribbean_secrets_ecommerce/views/product_detail/product_detail_screen.dart';
-import 'package:caribbean_secrets_ecommerce/views/secrets_tv/episodes_detail_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_view.dart';
+
+import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'views/secrets_tv/episodes_detail_screen/episode_detail_screen.dart';
 import 'views/shop_view/castor_oil_shop_screen/shop_view.dart';
 import 'views/shop_view/secret_collection_shop/secret_collection_screens/secret_collection_screen.dart';
-
-
 
 void main() {
   // setupLocator();
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Caribbean Secrets',
         debugShowCheckedModeBanner: false,
-        
+
         // theme: ThemeData(
         //   primarySwatch: Colors.blue,
         //   visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -58,8 +57,8 @@ class MyApp extends StatelessWidget {
           CheckoutRoute: (context) => CheckoutScreen(),
           CartRoute: (context) => CartView(),
           ProductDetailRoute: (context) => ProductDetailView(),
-          SecretsTVRoute: (context) => SecretsTVView(),
-          EpisodeDetailRoute: (context) => EpisodeDetailView(),
+          SecretsTVRoute: (context) => SecretsTVScreen(),
+          EpisodeDetailRoute: (context) => EpisodeDetailScreen(),
           BlogDetailRoute: (context) => BlogArticleView(),
         },
       ),

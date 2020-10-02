@@ -1,3 +1,4 @@
+import 'package:caribbean_secrets_ecommerce/views/cart/cart_view_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/centered_view/centered_view.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/footer/footer.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
@@ -9,6 +10,9 @@ class AboutViewMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     var scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+       drawerEnableOpenDragGesture: false,
+      drawer: NavigationDrawer(),
+      endDrawer: CartDrawer(),
       backgroundColor: Colors.black,
       key: scaffoldKey,
       body: Column(

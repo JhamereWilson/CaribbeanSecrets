@@ -1,55 +1,107 @@
-// import 'package:flutter/material.dart';
+import 'package:caribbean_secrets_ecommerce/models/episode_model.dart';
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
-// class EpisodeItem extends StatelessWidget {
-//   final int id;
-//   final String title;
-//   final String description;
-//   final String videoUrl;
-//   const EpisodeItem({Key key, this.id, this.title, this.description, this.videoUrl}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Card(
-//       color: Colors.white,
-//       elevation: 2,
-//       child: SizedBox(
-//         width: 360,
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: <Widget>[
-//             SizedBox(
-//               height: 180,
-//               // child: Image.asset(model.imageUrl, fit: BoxFit.cover,),
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.symmetric(
-//                 horizontal: 15.0,
-//                 vertical: 20,
-//               ),
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: <Widget>[
-//                   Text(
-//                     title,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.w700,
-//                       color: Colors.white,
-//                       fontSize: 14,
-//                     ),
-//                     softWrap: true,
-//                   ),
-//                   Text(
-//                     description,
-//                     style: TextStyle(fontSize: 10, color: Colors.white),
-                    
-//                   )
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-    
-//   }
-//   }
-// }
+class EpisodeItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final episode = Provider.of<EpisodeModel>(context, listen: false);
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) {
+        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+          return GestureDetector(
+            onTap: () => Navigator.of(context)
+                .pushNamed(EpisodeDetailRoute, arguments: episode.id),
+            child: Container(
+                margin: EdgeInsets.all(10),
+                height: 600,
+                width: 400,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      episode.coverImageUrl,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Text(
+                  episode.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    fontSize: 28,
+                  ),
+                )),
+          );
+        }
+        if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+          return GestureDetector(
+            onTap: () => Navigator.of(context)
+                .pushNamed(EpisodeDetailRoute, arguments: episode.id),
+            child: Container(
+                margin: EdgeInsets.all(10),
+                height: 300,
+                width: 200,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      episode.coverImageUrl,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Text(
+                  episode.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    fontSize: 28,
+                  ),
+                )),
+          );
+        }
+        if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
+          return GestureDetector(
+            onTap: () => Navigator.of(context)
+                .pushNamed(EpisodeDetailRoute, arguments: episode.id),
+            child: Container(
+                margin: EdgeInsets.all(10),
+                height: 200,
+                width: 135,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      episode.coverImageUrl,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Text(
+                  episode.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    fontSize: 28,
+                  ),
+                )),
+          );
+        }
+        return Container();
+      },
+    );
+  }
+}

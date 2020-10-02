@@ -6,6 +6,7 @@ import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
 
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+import 'package:caribbean_secrets_ecommerce/views/cart/cart_view_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection_shop/secret_collection_page_view/secret_collection_page_view.dart';
 
 import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection_shop/secret_container.dart';
@@ -26,6 +27,9 @@ class SecretCollectionScreenMobile extends StatelessWidget {
     var scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       backgroundColor: Colors.black,
+       drawerEnableOpenDragGesture: false,
+      drawer: NavigationDrawer(),
+      endDrawer: CartDrawer(),
       key: scaffoldKey,
       body: Column(
         children: [
