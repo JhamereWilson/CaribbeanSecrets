@@ -12,7 +12,7 @@ class AboutViewMobile extends StatelessWidget {
     return Scaffold(
        drawerEnableOpenDragGesture: false,
       drawer: NavigationDrawer(),
-      endDrawer: CartDrawer(),
+      endDrawer: CartScreenMobile(),
       backgroundColor: Colors.black,
       key: scaffoldKey,
       body: Column(

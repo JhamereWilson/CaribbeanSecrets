@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../widgets.dart';
 
@@ -77,6 +78,82 @@ class NavigationDrawer extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w100)),
             onTap: () => Navigator.of(context).pushNamed(AboutRoute),
+          ),
+          Divider(
+            height: 0.25,
+            thickness: 0.25,
+            color: Colors.white,
+          ),
+          ExpansionTile(
+            trailing: Icon(
+              Icons.arrow_drop_down,
+              color: Colors.white,
+            ),
+            title: Text(
+              "Folluw Us On Social Media",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w100),
+            ),
+            children: [
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  FontAwesomeIcons.facebook,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w100),
+                ),
+              ),
+              Divider(
+                height: 0.25,
+                thickness: 0.25,
+                color: Colors.white,
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(FontAwesomeIcons.instagram, color: Colors.white),
+                title: Text(
+                  "",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w100),
+                ),
+              ),
+              ListTile(
+                onTap: () {},
+                leading: Icon(
+                  FontAwesomeIcons.youtube,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w100),
+                ),
+              ),
+              Divider(
+                height: 0.25,
+                thickness: 0.25,
+                color: Colors.white,
+              ),
+              Text(
+                "Looking for 100% Pure Haitian Castor Oil in bulk? Contact us directly for pricing and availability.\n Call (856)701-9872 for inquries.",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w100),
+              ),
+            ],
           ),
         ],
       ),

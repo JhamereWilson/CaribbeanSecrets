@@ -23,16 +23,27 @@ class Cart with ChangeNotifier {
 
   bool couponApplied;
 
+  void applyCoupon() {
+    couponApplied = true;
+    notifyListeners();
+  }
+
   double get totalAmount {
-    var total = 0.0;
+    double total = 0;
     _items.forEach((key, cartItem) {
       total += cartItem.price * cartItem.quantity;
     });
+    if (couponApplied == true) {
+      total = total - 2;
+    }
+    if (total < 0) {
+      total = 0;
+    }
     return total;
   }
 
-  double get codeAmount {
-    var total = 0.0;
+  double get discountTotal {
+    double total = 0;
     _items.forEach((key, cartItem) {
       total += cartItem.price * cartItem.quantity;
     });

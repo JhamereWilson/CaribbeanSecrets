@@ -1,23 +1,26 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+import 'package:caribbean_secrets_ecommerce/views/cart/promo_form.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item_mobile.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class CartDrawer extends StatelessWidget {
+class CartScreenMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
     var height = ScreenDimensions(context).screenHeight;
-    var width = ScreenDimensions(context).screenWidth;
-    return Container(
-      width: 300,
-      decoration: BoxDecoration(color: Colors.black),
-      child: Column(
+    var fullWidth = ScreenDimensions(context).screenWidth;
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Column(
         children: [
+          NavigationBarMobile(),
           Container(
-            width: 300,
-            height: 50,
+            width: fullWidth,
+            height: 100,
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("/images/CSwebsite-1.jpg"),
@@ -33,28 +36,48 @@ class CartDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: 200,
-            width: 200,
-            child: ListView.builder(
-              // shrinkWrap: true,
-              padding: const EdgeInsets.all(20),
-              scrollDirection: Axis.vertical,
-              itemCount: cart.items.length,
-              itemBuilder: (ctx, i) => CartItem(
-                  id: cart.items.values.toList()[i].id,
-                  price: cart.items.values.toList()[i].price,
-                  quantity: cart.items.values.toList()[i].quantity,
-                  title: cart.items.values.toList()[i].title,
-                  productId: cart.items.values.toList()[i].productId,
-                  imageUrl: cart.items.values.toList()[i].imageUrl),
+          Expanded(
+            child: ListView(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "${cart.itemCount} items",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+                Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      height: 1,
+                      width: fullWidth / 3,
+                    )),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  height: 200,
+                  width: 300,
+                  child: ListView.builder(
+                    // shrinkWrap: true,
+                    padding: const EdgeInsets.all(20),
+                    scrollDirection: Axis.vertical,
+                    itemCount: cart.items.length,
+                    itemBuilder: (ctx, i) => CartItemMobile(
+                        id: cart.items.values.toList()[i].id,
+                        price: cart.items.values.toList()[i].price,
+                        quantity: cart.items.values.toList()[i].quantity,
+                        title: cart.items.values.toList()[i].title,
+                        productId: cart.items.values.toList()[i].productId,
+                        imageUrl: cart.items.values.toList()[i].imageUrl),
+                  ),
+                ),
+              ],
             ),
           ),
-          SizedBox(height: 5),
-          Divider(
-            height: 0.25,
-            color: Colors.white,
-          ),
+         PromoForm(),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -93,6 +116,7 @@ class CartDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w300),
                 )),
           ),
+          SizedBox(height: 20),
         ],
       ),
     );

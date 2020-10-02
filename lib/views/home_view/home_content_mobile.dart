@@ -23,7 +23,7 @@ class HomeContentMobile extends StatelessWidget {
       backgroundColor: Colors.black,
       drawerEnableOpenDragGesture: false,
       drawer: NavigationDrawer(),
-      endDrawer: CartDrawer(),
+      endDrawer: CartScreenMobile(),
       key: scaffoldKey,
       body: Column(
         children: [

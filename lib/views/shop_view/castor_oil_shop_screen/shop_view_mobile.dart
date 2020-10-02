@@ -14,7 +14,7 @@ class ShopViewMobile extends StatelessWidget {
       backgroundColor: Colors.black,
       drawerEnableOpenDragGesture: false,
       drawer: NavigationDrawer(),
-      endDrawer: CartDrawer(),
+      endDrawer: CartScreenMobile(),
       body: Column(
         children: [
           NavigationBarMobile(

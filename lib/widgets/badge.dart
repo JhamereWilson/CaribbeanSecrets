@@ -17,11 +17,11 @@ class Badge extends StatelessWidget {
       children: [
         child,
         Positioned(
-          top: 5,
+          top: 12,
                   child: Text(
             value,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 12, color: Colors.black, fontWeight: FontWeight.w600),
           ),
         ),
       ],
