@@ -31,7 +31,7 @@ class NavigationDrawer extends StatelessWidget {
             ),
             children: [
               ListTile(
-                onTap: () {},
+                onTap: () => Navigator.of(context).pushNamed(ShopRoute),
                 title: Text(
                   "Haitian Castor Oil",
                   style: TextStyle(
@@ -46,6 +46,7 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               ListTile(
+                onTap: () => Navigator.of(context).pushNamed(CollectionRoute),
                 title: Text(
                   "The Secret Collection",
                   style: TextStyle(
@@ -54,7 +55,7 @@ class NavigationDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w100),
                 ),
               ),
-               Divider(
+              Divider(
                 height: 0.25,
                 thickness: 0.25,
                 color: Colors.white,
@@ -68,14 +69,6 @@ class NavigationDrawer extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w100)),
             onTap: () => Navigator.of(context).pushNamed(SecretsTVRoute),
-          ),
-          ListTile(
-            title: Text("Blog",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w100)),
-            onTap: () => Navigator.of(context).pushNamed(CollectionRoute),
           ),
           ListTile(
             title: Text("Our Story",

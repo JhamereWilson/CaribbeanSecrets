@@ -50,6 +50,8 @@ class _AnimatedTextMobileState extends State<AnimatedTextMobile> {
               fontWeight: FontWeight.w800),
       duration: const Duration(milliseconds: 1500),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("THE"),
           Text("SECRET"),

@@ -1,17 +1,15 @@
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
-
-import 'package:caribbean_secrets_ecommerce/views/secret_collection/subscription_view/subscription_view.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'subscription_view/subscription_view.dart';
 
-import '../animated_text.dart';
+class SecretCollectionViewTablet extends StatelessWidget {
 
-class SecretCollectionViewMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
+
     print(subscribe.isSubscribed);
     return AnimatedSwitcher(
         duration: Duration(seconds: 2),
@@ -21,7 +19,7 @@ class SecretCollectionViewMobile extends StatelessWidget {
                   Expanded(
                     // flex: 1,
                     child: Container(
-                      height: 200,
+                      height: 800,
                       child: Center(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,12 +29,10 @@ class SecretCollectionViewMobile extends StatelessWidget {
                               "Can you keep a secret?",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 56,
                                   fontWeight: FontWeight.w900),
                             ),
                             FlatButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
                               onPressed: () => Navigator.of(context)
                                   .pushNamed(CollectionRoute),
                               color: Colors.white,
@@ -54,7 +50,7 @@ class SecretCollectionViewMobile extends StatelessWidget {
                   Expanded(
                     // flex: 2,
                     child: Container(
-                      height: 200,
+                      height: 800,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("/images/CSWebsite-33.jpg"),

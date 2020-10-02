@@ -1,19 +1,14 @@
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
-import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
-import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
-import 'package:caribbean_secrets_ecommerce/views/views.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../animated_text.dart';
 import 'subscription_view/subscription_view.dart';
 
 class SecretCollectionViewDesktop extends StatelessWidget {
-  bool glowing = false;
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
-    var screen = ScreenDimensions(context);
+
     print(subscribe.isSubscribed);
     return AnimatedSwitcher(
         duration: Duration(seconds: 2),

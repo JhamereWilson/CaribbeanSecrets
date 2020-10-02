@@ -40,7 +40,7 @@ class Products with ChangeNotifier {
       id: 4,
       title: "Pre-Poo",
       price: 25.00,
-      imageUrl: "/images/CSwebsite-40.jpg",
+      imageUrl: "/images/transparent_pree.png",
       description:
           "Step 1: Apply Pre-Poo before shampooing to reinforce your hair fibers with polar oils. Applying Pre-poo before shampooing and showering makes your hair stronger and more durable, minimizing hair breakage and dryness. ",
       threeDetails: ["CASTOR OIL", "COCONUT", "HEMP SEED"],
@@ -73,7 +73,7 @@ class Products with ChangeNotifier {
       id: 7,
       title: "Moisturizing Mist",
       price: 25.00,
-      imageUrl: "/images/CSwebsite-35.jpg",
+      imageUrl: "/images/entire_collection.png",
       description:
           "Apply Moisturizing Mist daily to reinvigorate your hair strands, making them moisturized and shiny. Use daily.",
       ingredients:

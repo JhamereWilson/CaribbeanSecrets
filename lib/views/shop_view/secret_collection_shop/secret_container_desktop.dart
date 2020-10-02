@@ -1,17 +1,18 @@
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 
-class SecretIngredientContainer extends StatefulWidget {
-  const SecretIngredientContainer({
+class SecretIngredientContainerDesktop extends StatefulWidget {
+  const SecretIngredientContainerDesktop({
     Key key,
   }) : super(key: key);
 
   @override
-  _SecretIngredientContainerState createState() =>
-      _SecretIngredientContainerState();
+  _SecretIngredientContainerDesktopState createState() =>
+      _SecretIngredientContainerDesktopState();
 }
 
-class _SecretIngredientContainerState extends State<SecretIngredientContainer> {
+class _SecretIngredientContainerDesktopState
+    extends State<SecretIngredientContainerDesktop> {
   bool hover1 = false;
   bool hover2 = false;
   bool hover3 = false;

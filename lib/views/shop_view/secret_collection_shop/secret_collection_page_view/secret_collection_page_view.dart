@@ -1,7 +1,9 @@
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_collection_page_view/secret_collection_page_item.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'secret_collection_page_item.dart';
 
 class SecretCollectionPageView extends StatelessWidget {
   @override

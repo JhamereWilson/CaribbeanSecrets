@@ -1,17 +1,14 @@
 import 'dart:async';
-import 'dart:html';
 
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
 import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
-import 'package:caribbean_secrets_ecommerce/shared/fade_in.dart';
+
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
-import 'package:caribbean_secrets_ecommerce/views/secret_collection/secret_collection_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/secret_collection/subscription_view/subscription_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_collection_page_view/secret_collection_page_view.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection/secret_container.dart';
-import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_items_view.dart';
+import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection_shop/secret_collection_page_view/secret_collection_page_view.dart';
+
+import 'package:caribbean_secrets_ecommerce/views/shop_view/secret_collection_shop/secret_container.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/badge.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/subscribe_field/subscribe_field.dart';
@@ -19,33 +16,14 @@ import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SecretCollectionScreen extends StatelessWidget {
-  const SecretCollectionScreen({Key key}) : super(key: key);
+class SecretCollectionScreenMobile extends StatelessWidget {
+  const SecretCollectionScreenMobile({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
     return Scaffold(
       backgroundColor: Colors.black,
-      floatingActionButton: FloatingActionButton(
-        elevation: 2.0,
-        onPressed: () {
-          Navigator.of(context).pushNamed(CartRoute);
-        },
-        backgroundColor: Colors.transparent,
-        focusColor: Colors.transparent,
-        foregroundColor: Colors.transparent,
-        hoverColor: Colors.black,
-        splashColor: Colors.black,
-        child: Consumer<Cart>(
-          builder: (_, cartData, ch) => Badge(
-            //ch is passed into the consumer where the child is defined
-            value: cartData.itemCount == 0 ? "" : cartData.itemCount.toString(),
-            child: ch,
-          ),
-          child: Icon(Icons.shopping_cart, color: Colors.white, size: 42),
-        ),
-      ),
       body: Column(
         children: [
           NavigationBar(),
@@ -55,7 +33,7 @@ class SecretCollectionScreen extends StatelessWidget {
               NavigationRow(
                 currentPage: "Secret Collection",
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Divider(
                 height: 1,
                 color: Colors.white,
@@ -64,16 +42,16 @@ class SecretCollectionScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  height: 500,
-                  width: 500,
-                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  height: 200,
+                  width: 200,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Center(
                     child: AnimatedFadeInText(
                       duration: Duration(seconds: 1),
                       text:
                           "Caribbean Secrets' Secret Collection gives you all the products that you need for a healthy hair care regimen.",
                       color: Colors.white,
-                      fontSize: 48,
+                      fontSize: 20,
                       fontWeight: FontWeight.w200,
                     ),
                   ),
@@ -83,27 +61,27 @@ class SecretCollectionScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Container(
-                  height: 200,
-                  width: 400,
-                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  height: 100,
+                  width: 200,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Center(
                     child: AnimatedFadeInText(
                       duration: Duration(seconds: 3),
                       text: "But what makes a deep secret?",
                       color: Colors.white,
-                      fontSize: 48,
+                      fontSize: 20,
                       fontWeight: FontWeight.w200,
                     ),
                   ),
                 ),
               ),
               SecretIngredientContainer(),
-              SizedBox(height: 60),
+              SizedBox(height: 30),
               subscribe.isSubscribed
                   ? Align(
                       alignment: Alignment.center,
                       child: BlinkingText(
-                          fontSize: 12,
+                          fontSize: 8,
                           text: "Swipe Right to Learn More",
                           fontWeight1: FontWeight.w100,
                           fontWeight2: FontWeight.w100,
@@ -116,19 +94,18 @@ class SecretCollectionScreen extends StatelessWidget {
                         "Subscribe Below to Unlock the Secret Collection",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 36,
+                            fontSize: 18,
                             fontWeight: FontWeight.w100),
                       ),
                     ),
-              SizedBox(height: 30),
+              SizedBox(height: 15),
               subscribe.isSubscribed
                   ? Container(
-                      height: 600,
+                      height: 300,
                       width: ScreenDimensions(context).screenWidth,
                       child: SecretCollectionPageView())
                   : SubscribeField(),
-              SizedBox(height: 60),
-              Footer(),
+              SizedBox(height: 30),
             ],
           )),
         ],
