@@ -18,7 +18,7 @@ class HomeContentMobile extends StatelessWidget {
   const HomeContentMobile({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var scaffoldKey = GlobalKey<ScaffoldState>();
+    final scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       backgroundColor: Colors.black,
       drawerEnableOpenDragGesture: false,
@@ -43,11 +43,14 @@ class HomeContentMobile extends StatelessWidget {
                 SizedBox(height: 25),
                 ProductSection(),
                 SecretCollectionView(),
+              
                 //TODO: Find alternative method for Footers in Mobile
               ],
             ),
           ),
+           
         ],
+        
       ),
     );
   }

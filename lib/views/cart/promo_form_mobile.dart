@@ -4,12 +4,12 @@ import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PromoForm extends StatefulWidget {
+class PromoFormMobile extends StatefulWidget {
   @override
-  _PromoFormState createState() => _PromoFormState();
+  _PromoFormMobileState createState() => _PromoFormMobileState();
 }
 
-class _PromoFormState extends State<PromoForm> {
+class _PromoFormMobileState extends State<PromoFormMobile> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _controller;
   String promoCode;
@@ -42,8 +42,8 @@ class _PromoFormState extends State<PromoForm> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 600,
-                height: 50,
+                width: 200,
+                height: 30,
                 child: Form(
                   key: _formKey,
                   child: TextFormField(
@@ -58,7 +58,7 @@ class _PromoFormState extends State<PromoForm> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 12,
                         fontWeight: FontWeight.w100),
                     decoration: InputDecoration(
                       labelText: "Enter Promo Code",
@@ -92,15 +92,15 @@ class _PromoFormState extends State<PromoForm> {
                               width: 1,
                               style: BorderStyle.solid)),
                       contentPadding: EdgeInsets.only(
-                          left: 15, bottom: 11, top: 11, right: 15),
+                          left: 5, bottom: 3, top: 3, right: 5),
                     ),
                   ),
                 ),
               ),
               SizedBox(width: 20),
               SizedBox(
-                width: 300,
-                height: 50,
+                width: 100,
+                height: 30,
                 child: FlatButton(
                   color: Colors.red,
                   onPressed: () {
@@ -123,7 +123,7 @@ class _PromoFormState extends State<PromoForm> {
                     "Submit",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w300),
                   ),
                 ),

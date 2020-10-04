@@ -16,6 +16,7 @@ import 'package:caribbean_secrets_ecommerce/views/secrets_tv/secrets_tv_screen.d
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/orders.dart';
 import 'views/secrets_tv/episodes_detail_screen/episode_detail_screen.dart';
 import 'views/shop_view/castor_oil_shop_screen/shop_view.dart';
 import 'views/shop_view/secret_collection_shop/secret_collection_screens/secret_collection_screen.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => Products()),
         ChangeNotifierProvider(create: (ctx) => Cart()),
         ChangeNotifierProvider(create: (ctx) => Subscription()),
-        ChangeNotifierProvider(create: (ctx) => Episodes())
+        ChangeNotifierProvider(create: (ctx) => Episodes()),
+        ChangeNotifierProvider(create: (ctx) => Orders())
       ],
       child: MaterialApp(
         title: 'Caribbean Secrets',

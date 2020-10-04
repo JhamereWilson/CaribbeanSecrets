@@ -87,7 +87,6 @@ class Products with ChangeNotifier {
           "Distilled Water, Aloe Vera Gel, Polysorbate 60, Olive Oil, Haitian Castr Oil, Honey, DL-Pathenol, Potassium Sorbate",
       threeDetails: ["H20", "HONEY", "OLIVE"],
     ),
-    Product(ingredients: "", threeDetails: [""], id: 8, title: "The Secret Collection", price: 100.00, squarePrice: 10000, imageUrl: "", description: "")
   ];
 
   List<Product> get oils {

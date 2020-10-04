@@ -8,11 +8,9 @@ class SecretCollectionViewDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final subscribe = Provider.of<Subscription>(context);
-
-    print(subscribe.isSubscribed);
     return AnimatedSwitcher(
         duration: Duration(seconds: 2),
-        child: subscribe.isSubscribed
+        child: (subscribe.isSubscribed == true)
             ? Row(
                 children: [
                   Expanded(

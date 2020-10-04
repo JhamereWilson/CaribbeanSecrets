@@ -114,7 +114,7 @@ class SecretCollectionPageItemTablet extends StatelessWidget {
                             child: FlatButton(
                               onPressed: () {
                                 cart.addItem(product.id, product.price,
-                                    product.title, product.imageUrl);
+                                    product.title, product.imageUrl, product.squarePrice);
                                 print("ITEM ADDED TO CART:" +
                                     " Product Title: ${product.title}" +
                                     ", Product ID: ${product.id}" +

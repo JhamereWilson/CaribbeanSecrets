@@ -1,6 +1,8 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/views/cart/promo_form.dart';
+import 'package:caribbean_secrets_ecommerce/views/cart/promo_form_mobile.dart';
+import 'package:caribbean_secrets_ecommerce/views/checkout/checkout_button.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
@@ -10,14 +12,18 @@ import 'package:provider/provider.dart';
 class CartScreenMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     var scaffoldKey = GlobalKey<ScaffoldState>();
     final cart = Provider.of<Cart>(context);
-    var height = ScreenDimensions(context).screenHeight;
     var fullWidth = ScreenDimensions(context).screenWidth;
     return Scaffold(
       backgroundColor: Colors.black,
+      drawerEnableOpenDragGesture: false,
+      drawer: NavigationDrawer(),
+      endDrawer: CartScreenMobile(),
+      key: scaffoldKey,
       body: Column(
         children: [
-          NavigationBarMobile(),
+          NavigationBarMobile(scaffKey: scaffoldKey,),
           Container(
             width: fullWidth,
             height: 100,
@@ -76,7 +82,7 @@ class CartScreenMobile extends StatelessWidget {
               ],
             ),
           ),
-         PromoForm(),
+          PromoFormMobile(),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -100,22 +106,12 @@ class CartScreenMobile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          SizedBox(
-            width: 150,
-            height: 35,
-            child: FlatButton(
-                color: Colors.red,
-                onPressed: () {
-                  //  locator<NavigationService>().navigateTo(CheckoutRoute);
-                },
-                child: Text(
-                  "Checkout",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300),
-                )),
-          ),
+     Align(
+                    alignment: Alignment.center,
+                    child: CheckoutButton(
+                      width: 150,
+                      height: 35,
+                    )),
           SizedBox(height: 20),
         ],
       ),

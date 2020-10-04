@@ -105,10 +105,9 @@ class _SubscribeFieldDesktopState extends State<SubscribeFieldDesktop> {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
               }
-              setState(() {
-                isLoading = true;
-                subscribe.subscribeUser(email);
-              });
+              subscribe.subscribeUser(email);
+              setState(() {});
+            
             },
             child: isLoading
                 ? CircularProgressIndicator(

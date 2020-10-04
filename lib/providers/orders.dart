@@ -13,7 +13,7 @@ class OrderItem {
   final int quantity;
   final List<CartItemModel> products;
 
-  OrderItem( {
+  OrderItem({
     @required this.title,
     @required this.amount,
     @required this.quantity,
@@ -22,13 +22,7 @@ class OrderItem {
 }
 
 class Orders with ChangeNotifier {
-  List<OrderItem> _orders = [];
-
-  final String userId;
-
-  Orders(this.userId, this._orders);
-
-    _launchURL(String url) async {
+  _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -36,8 +30,7 @@ class Orders with ChangeNotifier {
     }
   }
 
-
-    createSquareCheckout(List<CartItemModel> cartProducts) async {
+  createSquareCheckout(List<CartItemModel> cartProducts) async {
     final response = await http.post(
         "https://us-central1-caribbean-secrets.cloudfunctions.net/createCheckout",
         headers: {
@@ -45,17 +38,20 @@ class Orders with ChangeNotifier {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": "true",
         },
-        body: json.encode({"line_items" : cartProducts
-            .map((cp) => {
-                  'name': cp.title,
-                  'quantity': cp.quantity,
-                  'base_price_money': {
-                    'amount': cp.squarePrice,
-                    "currency": "USD"
-                  }
-               
-                })
-            .toList(),}));
+        body: json.encode({
+          "line_items": cartProducts
+              .map((cp) => {
+                    'name': cp.title,
+                    'quantity': cp.quantity.toString(),
+                    'base_price_money': {
+                      'amount': cp.squarePrice,
+                      "currency": "USD"
+                    }
+                  })
+              .toList(),
+        }));
+
+  
 
     if (response.statusCode == 200) {
       var checkoutUrl = response.body;

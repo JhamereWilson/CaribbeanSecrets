@@ -33,6 +33,14 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
+  void applyCouponSquare() {
+    if (couponApplied == true) {
+      var firstItem = _items.values.first;
+      firstItem.squarePrice -= 200;
+      notifyListeners();
+    }
+  }
+
   double get totalAmount {
     double total = 0;
     _items.forEach((key, cartItem) {
@@ -49,7 +57,7 @@ class Cart with ChangeNotifier {
 
   int get squareTotalAmount {
     int total = 0;
-     _items.forEach((key, cartItem) {
+    _items.forEach((key, cartItem) {
       total += cartItem.squarePrice * cartItem.quantity;
     });
   }
@@ -62,7 +70,8 @@ class Cart with ChangeNotifier {
     return total - 2;
   }
 
-  void addItem(int productId, double price, String title, String imageUrl) {
+  void addItem(int productId, double price, String title, String imageUrl,
+      int squarePrice) {
     if (_items.containsKey(productId)) {
       //change quantity
       _items.update(
@@ -74,18 +83,21 @@ class Cart with ChangeNotifier {
           quantity: existingCartItem.quantity + 1,
           imageUrl: existingCartItem.imageUrl,
           productId: existingCartItem.productId,
+          squarePrice: existingCartItem.squarePrice,
         ),
       );
     } else {
       _items.putIfAbsent(
         productId,
         () => CartItemModel(
-            price: price,
-            quantity: 1,
-            title: title,
-            id: timeDate,
-            productId: productId,
-            imageUrl: imageUrl),
+          squarePrice: squarePrice,
+          price: price,
+          quantity: 1,
+          title: title,
+          id: timeDate,
+          productId: productId,
+          imageUrl: imageUrl,
+        ),
       );
     }
     notifyListeners();
@@ -107,6 +119,7 @@ class Cart with ChangeNotifier {
           quantity: existingCartItem.quantity + 1,
           imageUrl: existingCartItem.imageUrl,
           productId: existingCartItem.productId,
+          squarePrice: existingCartItem.squarePrice,
         ),
       );
     }
@@ -127,6 +140,7 @@ class Cart with ChangeNotifier {
                 quantity: existingCartItem.quantity - 1,
                 imageUrl: existingCartItem.imageUrl,
                 productId: existingCartItem.productId,
+                squarePrice: existingCartItem.squarePrice,
               ));
     } else {
       _items.remove(productId);

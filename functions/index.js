@@ -11,12 +11,12 @@ const SquareConnect = require('square-connect');
 const crypto = require('crypto');
 const { request } = require("https");
 const defaultClient = SquareConnect.ApiClient.instance;
-defaultClient.basePath = "https://connect.squareupsandbox.com";
+defaultClient.basePath = "https://connect.squareup.com";
 
 
 // Configure OAuth2 access token for authorization: oauth2
 const oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'EAAAEJjxBjV2DKSTQJPchFidkWE8izfkOeTF3aQbsvQklnlLSii-Ti1r8L67imjf';
+oauth2.accessToken = 'EAAAEFI4Et6nidbtoygmUAS1uwiZoNXLt2dhHgQcLM9fHjhcCQ61-EsbfW4OrcmH';
 
 const customersApiInstance = new SquareConnect.CustomersApi();
 const checkout_api = new SquareConnect.CheckoutApi();
@@ -33,7 +33,7 @@ exports.createCustomer = functions.https.onRequest((req, res) => {
         .then(data => {
             console.log('API called successfully. Returned data: ' + data);
             console.log(JSON.stringify(data));
-            res.send(200);
+            res.status(200).send;
             return JSON.stringify(data.customer);
         }, error => {
             console.error(error);
@@ -50,9 +50,10 @@ exports.createCheckout = functions.https.onRequest((req, res) => {
     corsHandler(req, res, async () => {
         const checkout_idempotency_key = crypto.randomBytes(48).toString('hex');
         const order_idempotency_key = crypto.randomBytes(48).toString('hex');
-        const locationID = "LX5RNR9P3K0C5";
+        const locationID = "LWAJ295WG9XJW";
 
         const line_items = req.body.line_items;
+        console.log(line_items);
                   
             await checkout_api.createCheckout(locationID,
                 { 

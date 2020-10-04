@@ -152,8 +152,8 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
                           ),
                           child: FlatButton(
                             onPressed: () {
-                              cart.addItem(9, 100, "The Secret Collection",
-                                  "/images/entire_collection.png");
+                              cart.addItem(9, 100.00, "The Secret Collection",
+                                  "/images/entire_collection.png", 10000);
                             },
                             child: Text(
                               "ADD TO CART: \$100.00",

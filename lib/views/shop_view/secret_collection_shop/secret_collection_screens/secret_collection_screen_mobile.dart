@@ -140,7 +140,7 @@ class SecretCollectionScreenMobile extends StatelessWidget {
                           child: FlatButton(
                             onPressed: () {
                               cart.addItem(9, 100, "The Secret Collection",
-                                  "/images/entire_collection.png");
+                                  "/images/entire_collection.png", 10000);
                             },
                             child: Text(
                               "ADD TO CART: \$100.00",

@@ -88,18 +88,14 @@ class NavigationDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w100)),
             onTap: () => Navigator.of(context).pushNamed(AboutRoute),
           ),
-          Divider(
-            height: 0.25,
-            thickness: 0.25,
-            color: Colors.white,
-          ),
+         
           ExpansionTile(
             trailing: Icon(
               Icons.arrow_drop_down,
               color: Colors.white,
             ),
             title: Text(
-              "Folluw Us On Social Media",
+              "Follow Us On Social Media",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -142,6 +138,11 @@ class NavigationDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w100),
                 ),
               ),
+               Divider(
+            height: 0.25,
+            thickness: 0.25,
+            color: Colors.white,
+          ),
               ListTile(
                 onTap: () {
                  _launchURL(
@@ -164,6 +165,10 @@ class NavigationDrawer extends StatelessWidget {
                 thickness: 0.25,
                 color: Colors.white,
               ),
+            
+            ],
+          ),
+            SizedBox(height: 40),
               Text(
                 "Looking for 100% Pure Haitian Castor Oil in bulk? Contact us directly for pricing and availability.\n Call (856)701-9872 for inquries.",
                 style: TextStyle(
@@ -171,8 +176,6 @@ class NavigationDrawer extends StatelessWidget {
                     fontSize: 12,
                     fontWeight: FontWeight.w100),
               ),
-            ],
-          ),
         ],
       ),
     );

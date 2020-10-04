@@ -5,7 +5,7 @@ class CartItemModel extends ChangeNotifier {
   final String title;
   final int quantity;
   final double price;
-  final int squarePrice;
+  int squarePrice;
   final int productId;
   final String imageUrl;
 

@@ -33,7 +33,9 @@ class _CheckoutButtonState extends State<CheckoutButton> {
           // onPressed: () => Navigator.of(context).pushNamed(CheckoutRoute),
           onPressed: () {
             orders.createSquareCheckout(cart.items.values.toList());
-            Navigator.of(context).pushNamed(HomeRoute);
+            Future.delayed(Duration(seconds: 3), () {
+              Navigator.of(context).pushNamed(HomeRoute);
+            });
           },
           child: Text(
             "Checkout",

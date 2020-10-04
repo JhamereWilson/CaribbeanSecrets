@@ -79,6 +79,7 @@ class AboutViewDesktop extends StatelessWidget {
                     ],
                   ),
                 ),
+                Footer(),
               ],
             ),
           ),

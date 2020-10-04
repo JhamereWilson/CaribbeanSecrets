@@ -54,7 +54,7 @@ class HomeContentDesktop extends StatelessWidget {
                 SizedBox(height: 50),
                 SecretCollectionView(),
                 SizedBox(height: 50),
-                // Footer(),
+                Footer(),
               ],
             ),
           ),

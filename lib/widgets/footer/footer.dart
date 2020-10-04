@@ -26,63 +26,68 @@ class Footer extends StatelessWidget {
       alignment: Alignment.center,
       width: ScreenDimensions(context).screenWidth,
       height: 175,
-      child: Column(
-        children: [
-          Divider(
-            height: 1,
-            color: Colors.white,
-            thickness: 0.5,
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  FooterItem(
-                    'Home',
-                    navigateTo(HomeRoute),
-                  ),
-                  SizedBox(height: 5),
-                  FooterItem('Shop Oil', navigateTo(ShopRoute)),
-                  SizedBox(height: 5),
-                  FooterItem('Secret Collection', navigateTo(CollectionRoute)),
-                  SizedBox(height: 5),
-                  FooterItem('Our Story', navigateTo(AboutRoute)),
-                ],
-              ),
-              Column(
-                children: [
-                  FooterItem(
-                    'Privacy',
-                    navigateTo(AboutRoute),
-                  ),
-                  SizedBox(height: 5),
-                  FooterItem('Shipping', navigateTo(AboutRoute)),
-                  SizedBox(height: 5),
-                  FooterItem('Terms & Conditions', navigateTo(AboutRoute)),
-                ],
-              ),
-              Column(
-                children: [
-                  FooterItem('Facebook', () async => _launchURL("https://www.facebook.com/caribbeansecretscosmetics")),
-                  SizedBox(height: 5),
-                  FooterItem('Instagram', () async => _launchURL("https://www.instagram.com/caribbeansecretscosmetics/")),
-                  SizedBox(height: 5),
-                  FooterItem('Youtube', () async => _launchURL("https://www.youtube.com/channel/UCWuDlVqI9B1qaOGwjkKcIwg")),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(height: 30),
-          Text(
+      child:   Text(
             "2020 Caribbean Secrets.",
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 10),
-        ],
-      ),
+      // child: Column(
+      //   children: [
+      //     Divider(
+      //       height: 1,
+      //       color: Colors.white,
+      //       thickness: 0.5,
+      //     ),
+      //     SizedBox(height: 10),
+      //     Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //       children: [
+      //         Column(
+      //           children: [
+      //             FooterItem(
+      //               'Home',
+      //               navigateTo(HomeRoute),
+      //             ),
+      //             SizedBox(height: 5),
+      //             FooterItem('Shop Oil', navigateTo(ShopRoute)),
+      //             SizedBox(height: 5),
+      //             FooterItem('Secret Collection', navigateTo(CollectionRoute)),
+      //             SizedBox(height: 5),
+      //             FooterItem('Our Story', navigateTo(AboutRoute)),
+      //           ],
+      //         ),
+      //         Column(
+      //           children: [
+      //             FooterItem(
+      //               'Privacy',
+      //               navigateTo(AboutRoute),
+      //             ),
+      //             SizedBox(height: 5),
+      //             FooterItem('Shipping', navigateTo(AboutRoute)),
+      //             SizedBox(height: 5),
+      //             FooterItem('Terms & Conditions', navigateTo(AboutRoute)),
+      //           ],
+      //         ),
+      //         Column(
+      //           children: [
+      //             FooterItem('Facebook', () async => _launchURL("https://www.facebook.com/caribbeansecretscosmetics")),
+      //             SizedBox(height: 5),
+      //             FooterItem('Instagram', () async => _launchURL("https://www.instagram.com/caribbeansecretscosmetics/")),
+      //             SizedBox(height: 5),
+      //             FooterItem('Youtube', () async => _launchURL("https://www.youtube.com/channel/UCWuDlVqI9B1qaOGwjkKcIwg")),
+      //           ],
+      //         ),
+      //       ],
+      //     ),
+      //     SizedBox(height: 30),
+      //     Text(
+      //       "2020 Caribbean Secrets.",
+      //       style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
+      //       textAlign: TextAlign.center,
+      //     ),
+      //     SizedBox(height: 10),
+      //   ],
+      // ),
     );
   }
 }

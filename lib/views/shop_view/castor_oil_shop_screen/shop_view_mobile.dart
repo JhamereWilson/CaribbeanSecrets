@@ -51,7 +51,7 @@ class ShopViewMobile extends StatelessWidget {
                       color: Colors.white,
                       thickness: 0.5,
                     ),
-                    Container(height: 400, child: CastorOilItemPageView()),
+                    Container(height: 600, child: CastorOilItemPageView()),
                   ],
                 ),
               ],
