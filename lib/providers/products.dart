@@ -7,6 +7,7 @@ class Products with ChangeNotifier {
       id: 1,
       title: "Original Haitian Castor Oil",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/CS1Bottle.png",
       description:
           "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
@@ -17,6 +18,7 @@ class Products with ChangeNotifier {
       id: 2,
       title: "Vanilla Haitian Castor Oil",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/CS1Bottle.png",
       description:
           "Soothe your scalp and your senses with Vanilla infused Haitian Castor Oil.",
@@ -27,6 +29,7 @@ class Products with ChangeNotifier {
       id: 3,
       title: "Peppermint Haitian Castor Oil",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/CS1Bottle.png",
       description:
           "Stimulate hair growth with peppermint oil infused Haitian Castor Oil.",
@@ -40,6 +43,7 @@ class Products with ChangeNotifier {
       id: 4,
       title: "Pre-Poo",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/transparent_pree.png",
       description:
           "Step 1: Apply Pre-Poo before shampooing to reinforce your hair fibers with polar oils. Applying Pre-poo before shampooing and showering makes your hair stronger and more durable, minimizing hair breakage and dryness. ",
@@ -51,6 +55,7 @@ class Products with ChangeNotifier {
       id: 5,
       title: "Secret Shampoo",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/CSwebsite-39.jpg",
       description:
           "Step 2: Apply Shampoo at least once a month to gently cleanse your hair, remove dust, dirt, oil, and other debris from your hair without stipping it bare of its natural oils. Our shampoo is sulfate-free so your hair will thank you.",
@@ -62,6 +67,7 @@ class Products with ChangeNotifier {
       id: 6,
       title: "Crème",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/CSwebsite-38.jpg",
       description:
           "Step 3: Apply Crème after shampooing to replenish your hair strands with the perfect combination of proteins and healthy fats to enhance your curl pattern and overall hair health.",
@@ -73,6 +79,7 @@ class Products with ChangeNotifier {
       id: 7,
       title: "Moisturizing Mist",
       price: 25.00,
+      squarePrice: 2500,
       imageUrl: "/images/entire_collection.png",
       description:
           "Step 4: Apply Moisturizing Mist daily to reinvigorate your hair strands, making them moisturized and shiny. Use daily.",
@@ -80,6 +87,7 @@ class Products with ChangeNotifier {
           "Distilled Water, Aloe Vera Gel, Polysorbate 60, Olive Oil, Haitian Castr Oil, Honey, DL-Pathenol, Potassium Sorbate",
       threeDetails: ["H20", "HONEY", "OLIVE"],
     ),
+    Product(ingredients: "", threeDetails: [""], id: 8, title: "The Secret Collection", price: 100.00, squarePrice: 10000, imageUrl: "", description: "")
   ];
 
   List<Product> get oils {

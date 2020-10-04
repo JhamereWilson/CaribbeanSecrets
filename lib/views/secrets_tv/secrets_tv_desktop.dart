@@ -1,4 +1,7 @@
+import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/episodes.dart';
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
+import 'package:caribbean_secrets_ecommerce/widgets/badge.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +16,25 @@ class SecretsTVScreenDesktop extends StatelessWidget {
     final episodes = episodesData.episodes;
     return Scaffold(
       backgroundColor: Colors.black,
+            floatingActionButton: FloatingActionButton(
+        elevation: 2.0,
+        onPressed: () {
+          Navigator.of(context).pushNamed(CartRoute);
+        },
+        backgroundColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        foregroundColor: Colors.transparent,
+        hoverColor: Colors.black,
+        splashColor: Colors.black,
+        child: Consumer<Cart>(
+          builder: (_, cartData, ch) => Badge(
+            //ch is passed into the consumer where the child is defined
+            value: cartData.itemCount == 0 ? "" : cartData.itemCount.toString(),
+            child: ch,
+          ),
+          child: Icon(Icons.shopping_cart, color: Colors.white, size: 42),
+        ),
+      ),
       body: Column(
         children: [
           NavigationBar(),

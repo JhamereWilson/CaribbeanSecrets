@@ -47,6 +47,13 @@ class Cart with ChangeNotifier {
     return total;
   }
 
+  int get squareTotalAmount {
+    int total = 0;
+     _items.forEach((key, cartItem) {
+      total += cartItem.squarePrice * cartItem.quantity;
+    });
+  }
+
   double get discountTotal {
     double total = 0;
     _items.forEach((key, cartItem) {
@@ -131,6 +138,4 @@ class Cart with ChangeNotifier {
     _items = {};
     notifyListeners();
   }
-
- 
 }

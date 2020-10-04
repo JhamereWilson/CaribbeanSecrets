@@ -1,6 +1,7 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart' show Cart;
 
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
+import 'package:caribbean_secrets_ecommerce/views/checkout/checkout_button.dart';
 import 'package:caribbean_secrets_ecommerce/views/cart/promo_form.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/cart/cart_item_desktop.dart';
@@ -20,27 +21,27 @@ class CartView extends StatelessWidget {
       body: Column(
         children: [
           NavigationBarTabDesk(),
-          Container(
-            width: width,
-            height: 400,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("/images/CSwebsite-1.jpg"),
-                  fit: BoxFit.cover),
-            ),
-            child: Center(
-              child: Text(
-                "Shopping Cart",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w900),
-              ),
-            ),
-          ),
           Expanded(
             child: ListView(
               children: [
+                Container(
+                  width: width,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("/images/CSwebsite-1.jpg"),
+                        fit: BoxFit.cover),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Shopping Cart",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 48,
+                          fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                ),
                 Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -52,11 +53,15 @@ class CartView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      height: 1,
-                      width: width / 3,
-                    )),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "\$${cart.totalAmount}.00",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ),
                 Container(
                   height: 400,
                   width: 600,
@@ -75,10 +80,16 @@ class CartView extends StatelessWidget {
                   ),
                 ),
                 PromoForm(),
+                SizedBox(height: 20),
+                Align(
+                    alignment: Alignment.center,
+                    child: CheckoutButton(
+                      width: 300,
+                      height: 50,
+                    )),
               ],
             ),
           ),
-    
         ],
       ),
     );

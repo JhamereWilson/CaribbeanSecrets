@@ -62,7 +62,6 @@ class AboutViewMobile extends StatelessWidget {
                     ],
                   ),
                 ),
-                Footer(),
               ],
             ),
           ),

@@ -2,9 +2,10 @@ import 'package:caribbean_secrets_ecommerce/widgets/hoverable_navigation_button.
 import 'package:flutter/material.dart';
 
 class NavigationRow extends StatelessWidget {
-  const NavigationRow({Key key, @required this.currentPage}) : super(key: key);
+  const NavigationRow({Key key, this.currentPage,}) : super(key: key);
 
   final String currentPage;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class NavigationRow extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
+        child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -34,7 +35,9 @@ class NavigationRow extends StatelessWidget {
             Text(
               currentPage,
               style: TextStyle(
-                  color: Colors.white, fontSize: 18, fontWeight: FontWeight.w300),
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w300),
             ),
           ],
         ),

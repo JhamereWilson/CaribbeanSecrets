@@ -28,7 +28,7 @@ class BlogView extends StatelessWidget {
                     ],
                   ),
                 ),
-                Footer(),
+                
               ],
             ),
           ),

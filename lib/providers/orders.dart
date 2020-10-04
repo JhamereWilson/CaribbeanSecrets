@@ -1,23 +1,23 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:caribbean_secrets_ecommerce/models/cart_item_model.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-
-import './cart.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OrderItem {
-  final String id;
-  final double amount;
+  final String title;
+  final int amount;
+  final int quantity;
   final List<CartItemModel> products;
-  final DateTime dateTime;
 
-  OrderItem({
-    @required this.id,
+  OrderItem( {
+    @required this.title,
     @required this.amount,
+    @required this.quantity,
     @required this.products,
-    @required this.dateTime,
   });
 }
 
@@ -28,71 +28,40 @@ class Orders with ChangeNotifier {
 
   Orders(this.userId, this._orders);
 
-  List<OrderItem> get orders {
-    return [..._orders];
+    _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
-  Future<void> fetchAndSetOrders() async {
-    final url =
-        'https://flutter-update.firebaseio.com/orders/';
-    final response = await http.get(url);
-    final List<OrderItem> loadedOrders = [];
-    final extractedData = json.decode(response.body) as Map<String, dynamic>;
-    if (extractedData == null) {
-      return;
+
+    createSquareCheckout(List<CartItemModel> cartProducts) async {
+    final response = await http.post(
+        "https://us-central1-caribbean-secrets.cloudfunctions.net/createCheckout",
+        headers: {
+          HttpHeaders.contentTypeHeader: "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+        },
+        body: json.encode({"line_items" : cartProducts
+            .map((cp) => {
+                  'name': cp.title,
+                  'quantity': cp.quantity,
+                  'base_price_money': {
+                    'amount': cp.squarePrice,
+                    "currency": "USD"
+                  }
+               
+                })
+            .toList(),}));
+
+    if (response.statusCode == 200) {
+      var checkoutUrl = response.body;
+      _launchURL(checkoutUrl);
     }
-    extractedData.forEach((orderId, orderData) {
-      loadedOrders.add(
-        OrderItem(
-          id: orderId,
-          amount: orderData['amount'],
-          dateTime: DateTime.parse(orderData['dateTime']),
-          products: (orderData['products'] as List<dynamic>)
-              .map(
-                (item) => CartItemModel(
-                  id: item['id'],
-                  price: item['price'],
-                  quantity: item['quantity'],
-                  title: item['title'], 
-                  imageUrl: item['imageUrl'], productId: item['productId'],
-                ),
-              )
-              .toList(),
-        ),
-      );
-    });
-    _orders = loadedOrders.reversed.toList();
+    print(response.body);
     notifyListeners();
   }
-
-  // Future<void> addOrder(List<CartItemModel> cartProducts, double total) async {
-  //   final url =
-  //       'https://flutter-update.firebaseio.com';
-  //   final timestamp = DateTime.now();
-  //   final response = await http.post(
-  //     url,
-  //     body: json.encode({
-  //       'amount': total,
-  //       'dateTime': timestamp.toIso8601String(),
-  //       'products': cartProducts
-  //           .map((cp) => {
-  //                 'id': cp.id,
-  //                 'title': cp.title,
-  //                 'quantity': cp.quantity,
-  //                 'price': cp.price,
-  //               })
-  //           .toList(),
-  //     }),
-  //   );
-  //   _orders.insert(
-  //     0,
-  //     OrderItem(
-  //       id: json.decode(response.body)['name'],
-  //       amount: total,
-  //       dateTime: timestamp,
-  //       products: cartProducts,
-  //     ),
-  //   );
-  //   notifyListeners();
-  // }
 }

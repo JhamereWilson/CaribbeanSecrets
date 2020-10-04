@@ -38,12 +38,12 @@ class _PromoFormState extends State<PromoForm> {
     final cart = Provider.of<Cart>(context);
     return promoSuccess == false
         ? Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: ScreenDimensions(context).screenWidth / 2,
-                height: ScreenDimensions(context).screenHeight / 20,
+                width: 600,
+                height: 50,
                 child: Form(
                   key: _formKey,
                   child: TextFormField(
@@ -97,9 +97,10 @@ class _PromoFormState extends State<PromoForm> {
                   ),
                 ),
               ),
+              SizedBox(width: 20),
               SizedBox(
-                width: 150,
-                height: 35,
+                width: 300,
+                height: 50,
                 child: FlatButton(
                   color: Colors.red,
                   onPressed: () {

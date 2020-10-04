@@ -1,3 +1,4 @@
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 import 'package:flutter/material.dart';
 
 class HoverableNavigationButton extends StatefulWidget {
@@ -28,7 +29,7 @@ class _HoverableNavigationButtonState extends State<HoverableNavigationButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushNamed(HomeRoute),
       onHover: (value) {
         if (value) {
           setState(() {

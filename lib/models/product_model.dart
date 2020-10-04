@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 class Product extends ChangeNotifier {
   final int id;
+  final int squarePrice;
   final String title;
   final double price;
   final String imageUrl;
@@ -16,6 +17,7 @@ class Product extends ChangeNotifier {
       @required this.id,
       @required this.title,
       @required this.price,
+      @required this.squarePrice,
       @required this.imageUrl,
-      @required this.description});
+      @required this.description,});
 }

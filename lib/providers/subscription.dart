@@ -18,6 +18,7 @@ class Subscription with ChangeNotifier {
     );
     if (response.statusCode == 200) {
       isSubscribed = true;
+      print(jsonDecode(response.body));
     } else {
       isSubscribed = false;
     }

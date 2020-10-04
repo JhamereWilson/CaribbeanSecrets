@@ -1,13 +1,22 @@
-import 'dart:html';
+import 'dart:html' as html;
 import 'dart:ui';
 
 import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets.dart';
 
 class NavigationDrawer extends StatelessWidget {
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -98,7 +107,10 @@ class NavigationDrawer extends StatelessWidget {
             ),
             children: [
               ListTile(
-                onTap: () {},
+                onTap: () {
+                 _launchURL(
+                      "https://www.facebook.com/caribbeansecretscosmetics");
+                },
                 leading: Icon(
                   FontAwesomeIcons.facebook,
                   color: Colors.white,
@@ -117,8 +129,11 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               ListTile(
-                onTap: () {},
-                leading: Icon(FontAwesomeIcons.instagram, color: Colors.white),
+                onTap: () {
+                  _launchURL(
+                      "https://www.youtube.com/channel/UCWuDlVqI9B1qaOGwjkKcIwg");
+                },
+                leading: Icon(FontAwesomeIcons.youtube, color: Colors.white),
                 title: Text(
                   "",
                   style: TextStyle(
@@ -128,9 +143,12 @@ class NavigationDrawer extends StatelessWidget {
                 ),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                 _launchURL(
+                      "https://www.instagram.com/caribbeansecretscosmetics/");
+                },
                 leading: Icon(
-                  FontAwesomeIcons.youtube,
+                  FontAwesomeIcons.instagram,
                   color: Colors.white,
                 ),
                 title: Text(
