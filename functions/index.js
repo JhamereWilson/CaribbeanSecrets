@@ -33,8 +33,9 @@ exports.createCustomer = functions.https.onRequest((req, res) => {
         .then(data => {
             console.log('API called successfully. Returned data: ' + data);
             console.log(JSON.stringify(data));
-            res.status(200).send;
-            return JSON.stringify(data.customer);
+            res.status(200).send();
+            res.status(204).send;
+            return res.statusCode(200);
         }, error => {
             console.error(error);
             return null;
@@ -43,8 +44,7 @@ exports.createCustomer = functions.https.onRequest((req, res) => {
 });
 
 
-
-// //Checkout API Call
+ //Checkout API Call
 
 exports.createCheckout = functions.https.onRequest((req, res) => {
     corsHandler(req, res, async () => {

@@ -166,6 +166,7 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
                       ),
                     )
                   : Container(),
+              Footer(),
             ],
           )),
         ],

@@ -1,4 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/providers/subscription.dart';
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +31,7 @@ class SecretCollectionViewDesktop extends StatelessWidget {
                                   fontWeight: FontWeight.w900),
                             ),
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () => Navigator.of(context).pushNamed(CollectionRoute),
                               color: Colors.white,
                               child: Text("Shop",
                                   style: TextStyle(

@@ -65,6 +65,7 @@ class ShopViewDesktop extends StatelessWidget {
                     thickness: 0.5,
                   ),
                   Container(height: 800, child: CastorOilItemPageView()),
+                  Footer(),
                 ],
               ),
             ),

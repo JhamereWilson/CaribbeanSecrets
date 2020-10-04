@@ -15,7 +15,7 @@ class SecretCollectionViewMobile extends StatelessWidget {
     print(subscribe.isSubscribed);
     return AnimatedSwitcher(
         duration: Duration(seconds: 2),
-        child: subscribe.isSubscribed
+        child: (subscribe.isSubscribed == true)
             ? Row(
                 children: [
                   Expanded(
