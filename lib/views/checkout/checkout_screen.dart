@@ -7,27 +7,14 @@ import 'package:provider/provider.dart';
 
 import 'checkout_web_view.dart';
 
-class CheckoutScreen extends StatefulWidget {
-  static const routeName = '/checkout';
+class CheckoutScreen extends StatelessWidget {
 
-  @override
-  _CheckoutScreenState createState() => _CheckoutScreenState();
-}
 
-class _CheckoutScreenState extends State<CheckoutScreen> {
-  TextEditingController _controller;
-  String promoCode;
-  String cardName;
-  String promoMessage;
-  String cardNum;
-
-  bool promoSuccess = false;
-  bool promoFail = false;
-
-  final _payFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final url =
+        ModalRoute.of(context).settings.arguments as String;
     final cart = Provider.of<Cart>(context);
     return Scaffold(
         backgroundColor: Colors.black,
@@ -36,35 +23,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Expanded(
             child: Container(
               height: MediaQuery.of(context).size.height,
-              child: CenteredView(
-                child: ListView(children: [
-                  Container(
-                    height: 100,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("/images/CSwebsite-5.jpg"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Checkout",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 48,
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  SizedBox(height: 20),
-                  Container(
-                    height: 0.25,
-                    width: 50,
-                    color: Colors.white,
-                  ),
-                  CheckoutForm(),
-                ]),
-              ),
+              width: MediaQuery.of(context).size.width,
+              child: CheckoutWebView(url: url),
             ),
           ),
         ]));

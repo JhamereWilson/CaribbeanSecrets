@@ -1,6 +1,4 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
-import 'package:caribbean_secrets_ecommerce/providers/promo_provider.dart';
-import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

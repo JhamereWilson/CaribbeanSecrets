@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:html' as html;
 
 import 'package:caribbean_secrets_ecommerce/models/cart_item_model.dart';
 
@@ -22,13 +23,14 @@ class OrderItem {
 }
 
 class Orders with ChangeNotifier {
-  _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+
+  // _launchURL(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(url, forceWebView: );
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
 
   createSquareCheckout(List<CartItemModel> cartProducts) async {
     final response = await http.post(
@@ -55,7 +57,9 @@ class Orders with ChangeNotifier {
 
     if (response.statusCode == 200) {
       var checkoutUrl = response.body;
-      _launchURL(checkoutUrl);
+      // _launchURL(checkoutUrl);
+      // html.window.open(checkoutUrl, "");
+      html.window.location.href = checkoutUrl;
     }
     print(response.body);
     notifyListeners();
