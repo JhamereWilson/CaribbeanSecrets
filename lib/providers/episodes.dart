@@ -28,7 +28,14 @@ class Episodes with ChangeNotifier {
       id: 4,
       title: "How to Use Haitian Castor Oil Part 4",
       description: "The Comparison",
-      coverImageUrl: "images/CSwebsite-21.jpg",
+      coverImageUrl: "images/CSwebsite-28.jpg",
+    ),
+     EpisodeModel(
+      videoUrl: "https://www.youtube.com/embed/PfcdGf_IqIw",
+      id: 5,
+      title: "Welcome to the Family",
+      description: "The Comparison",
+      coverImageUrl: "images/CSwebsite-20.jpg",
     ),
   ];
 

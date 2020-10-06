@@ -24,7 +24,7 @@ class CastorOilPageItemMobile extends StatelessWidget {
                       child: Container(
             
               width: 250,
-              height: 100,
+              height: 50,
               child: Center(
                 child: Text(
                   product.title,
@@ -38,7 +38,7 @@ class CastorOilPageItemMobile extends StatelessWidget {
             ),
           ),
           Container(
-            height: 200,
+            height: 150,
             width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(

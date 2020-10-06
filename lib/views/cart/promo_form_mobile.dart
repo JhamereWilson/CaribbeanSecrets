@@ -1,4 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,6 +35,8 @@ class _PromoFormMobileState extends State<PromoFormMobile> {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
+    num screenHeight = ScreenDimensions(context).screenHeight;
+    num screenWidth = ScreenDimensions(context).screenWidth;
     return promoSuccess == false
         ? Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -90,15 +93,20 @@ class _PromoFormMobileState extends State<PromoFormMobile> {
                               width: 1,
                               style: BorderStyle.solid)),
                       contentPadding: EdgeInsets.only(
-                          left: 5, bottom: 3, top: 3, right: 5),
+                          left: screenWidth * .02,
+                          bottom: screenHeight * .0125,
+                          top: screenHeight * .0125,
+                          right: screenWidth * .02),
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 20),
               SizedBox(
-                width: 100,
-                height: 30,
+                height: screenHeight * 0.025,
+              ),
+              SizedBox(
+                height: screenHeight * .03,
+                width: screenWidth / 3,
                 child: FlatButton(
                   color: Colors.red,
                   onPressed: () {
