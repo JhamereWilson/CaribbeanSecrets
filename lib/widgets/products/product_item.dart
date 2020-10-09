@@ -1,6 +1,6 @@
 import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
-
+import 'package:caribbean_secrets_ecommerce/extensions/hover_extensions.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/products/product_item_desktop.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/products/product_item_mobile.dart';

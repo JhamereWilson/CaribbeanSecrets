@@ -5,10 +5,13 @@ class Badge extends StatelessWidget {
     Key key,
     @required this.child,
     @required this.value,
+    @required this.fontSize, @required this.topPosition,
   }) : super(key: key);
 
   final Widget child;
   final String value;
+  final num fontSize;
+  final num topPosition;
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +20,12 @@ class Badge extends StatelessWidget {
       children: [
         child,
         Positioned(
-          top: 12,
-                  child: Text(
+          top: topPosition,
+          child: Text(
             value,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.black, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                fontSize: fontSize, color: Colors.white, fontWeight: FontWeight.w600),
           ),
         ),
       ],

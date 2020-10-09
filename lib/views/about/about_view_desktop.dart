@@ -24,11 +24,13 @@ class AboutViewDesktop extends StatelessWidget {
         splashColor: Colors.black,
         child: Consumer<Cart>(
           builder: (_, cartData, ch) => Badge(
+            fontSize: 16,
+            topPosition: 4,
             //ch is passed into the consumer where the child is defined
             value: cartData.itemCount == 0 ? "" : cartData.itemCount.toString(),
             child: ch,
           ),
-          child: Icon(Icons.shopping_cart, color: Colors.white, size: 42),
+          child: Icon(Icons.shopping_cart, color: Colors.red, size: 42),
         ),
       ),
       backgroundColor: Colors.black,

@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
           AboutRoute: (context) => AboutView(),
           CheckoutRoute: (context) => CheckoutScreen(),
           CartRoute: (context) => CartView(),
-          ProductDetailRoute: (context) => ProductDetailView(),
+          ProductDetailRoute: (context) => ProductDetailScreen(),
           SecretsTVRoute: (context) => SecretsTVScreen(),
           EpisodeDetailRoute: (context) => EpisodeDetailScreen(),
           BlogDetailRoute: (context) => BlogArticleView(),

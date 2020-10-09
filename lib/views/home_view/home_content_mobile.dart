@@ -43,14 +43,12 @@ class HomeContentMobile extends StatelessWidget {
                 SizedBox(height: 25),
                 ProductSection(),
                 SecretCollectionView(),
-              
+
                 //TODO: Find alternative method for Footers in Mobile
               ],
             ),
           ),
-           
         ],
-        
       ),
     );
   }

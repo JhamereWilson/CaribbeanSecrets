@@ -8,16 +8,19 @@ class Product extends ChangeNotifier {
   final String imageUrl;
   final String description;
   final String ingredients;
+  final String uses;
   final List<String> threeDetails;
   bool isFavorite;
 
-  Product(
-      {@required this.ingredients,
-      @required this.threeDetails,
-      @required this.id,
-      @required this.title,
-      @required this.price,
-      @required this.squarePrice,
-      @required this.imageUrl,
-      @required this.description,});
+  Product({
+    @required this.ingredients,
+    this.uses,
+    @required this.threeDetails,
+    @required this.id,
+    @required this.title,
+    @required this.price,
+    @required this.squarePrice,
+    @required this.imageUrl,
+    @required this.description,
+  });
 }

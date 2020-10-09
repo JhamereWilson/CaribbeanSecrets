@@ -31,6 +31,8 @@ class NavigationBarMobile extends StatelessWidget {
               ),
               Consumer<Cart>(
                 builder: (_, cartData, ch) => Badge(
+                  fontSize: 12,
+                  topPosition: 12,
                   //ch is passed into the consumer where the child is defined
                   value: cartData.itemCount == 0
                       ? ""

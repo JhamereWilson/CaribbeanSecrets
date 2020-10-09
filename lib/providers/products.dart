@@ -12,7 +12,8 @@ class Products with ChangeNotifier {
       description:
           "Enjoy the traditional aspects of using Pure Unrefined Hatian Castor Oil.",
       ingredients: "Pure Unrefined Haitian Castor Oil",
-      threeDetails: ["Unrefined", "Cator", "Oil"],
+      threeDetails: ["Unrefined", "Castor", "Oil"],
+      uses: "Promote Hair Growth, Moisturize Hair, Moisturize Skin"
     ),
     Product(
       id: 2,
@@ -24,6 +25,7 @@ class Products with ChangeNotifier {
           "Soothe your scalp and your senses with Vanilla infused Haitian Castor Oil.",
       ingredients: "Pure Unrefined Haitian Castor Oil, Vanilla Essential Oil",
       threeDetails: ["Vanilla", "Essential", "Oil"],
+      uses: "Promote Hair Growth, Moisturize Hair, Soothes Scalp"
     ),
     Product(
       id: 3,
@@ -36,6 +38,7 @@ class Products with ChangeNotifier {
       ingredients:
           "Pure Unrefined Haitian Castor Oil , Peppermint Essential Oil",
       threeDetails: ["Peppermint", "Essential", "Oil"],
+      uses: "Promote Hair Growth, Moisturize Hair, Cleanse Scalp"
     ),
   ];
   List<Product> _collectionItems = [
@@ -50,6 +53,7 @@ class Products with ChangeNotifier {
       threeDetails: ["CASTOR OIL", "COCONUT", "HEMP SEED"],
       ingredients:
           "Pure Unrefined Haitian Castor Oil, Hemp Seed Oil, Coconut Oil",
+          
     ),
     Product(
       id: 5,

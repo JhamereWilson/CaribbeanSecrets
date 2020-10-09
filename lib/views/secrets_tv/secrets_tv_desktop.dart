@@ -16,7 +16,7 @@ class SecretsTVScreenDesktop extends StatelessWidget {
     final episodes = episodesData.episodes;
     return Scaffold(
       backgroundColor: Colors.black,
-            floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         elevation: 2.0,
         onPressed: () {
           Navigator.of(context).pushNamed(CartRoute);
@@ -28,11 +28,13 @@ class SecretsTVScreenDesktop extends StatelessWidget {
         splashColor: Colors.black,
         child: Consumer<Cart>(
           builder: (_, cartData, ch) => Badge(
+            fontSize: 16,
+            topPosition: 4,
             //ch is passed into the consumer where the child is defined
             value: cartData.itemCount == 0 ? "" : cartData.itemCount.toString(),
             child: ch,
           ),
-          child: Icon(Icons.shopping_cart, color: Colors.white, size: 42),
+          child: Icon(Icons.shopping_cart, color: Colors.red, size: 42),
         ),
       ),
       body: Column(
@@ -59,11 +61,12 @@ class SecretsTVScreenDesktop extends StatelessWidget {
                             fontWeight: FontWeight.w100),
                         children: <TextSpan>[
                           TextSpan(
-                              text: ' TV',
-                              style: TextStyle(
-                                  color: Colors.red[700],
-                                  fontSize: 48,
-                                  fontWeight: FontWeight.w900))
+                            text: ' TV',
+                            style: TextStyle(
+                                color: Colors.red[700],
+                                fontSize: 48,
+                                fontWeight: FontWeight.w900),
+                          )
                         ]),
                   ),
                 ),

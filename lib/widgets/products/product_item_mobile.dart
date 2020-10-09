@@ -1,9 +1,12 @@
 import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
+import 'package:caribbean_secrets_ecommerce/routing/route_names.dart';
 
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../add_to_cart_button.dart';
 
 class ProductItemMobile extends StatelessWidget {
   @override
@@ -15,7 +18,8 @@ class ProductItemMobile extends StatelessWidget {
     return GridTile(
       child: GestureDetector(
         onTap: () {
-          //TODO: Implement navigation function when user taps -> router settings is fucking up
+          Navigator.of(context)
+              .pushNamed(ProductDetailRoute, arguments: product.id);
         },
         child: Column(
           children: [
@@ -46,47 +50,14 @@ class ProductItemMobile extends StatelessWidget {
                   fontWeight: FontWeight.w900),
             ),
             SizedBox(height: 5),
-            Container(
-              height: 25,
-              width: 125,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Colors.red,
-                  Colors.orange,
-                  Colors.yellow,
-                  Colors.green,
-                  Colors.teal,
-                  Colors.blue,
-                  Colors.purple,
-                  Colors.deepPurple
-                ]),
-                borderRadius: BorderRadius.circular(32),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
-                    color: Colors.black,
-                  ),
-                  child: FlatButton(
-                    onPressed: () {
-                      cart.addItem(product.id, product.price, product.title,
-                          product.imageUrl, product.squarePrice);
-                      print("ITEM ADDED TO CART:" +
-                          " Product Title: ${product.title}" +
-                          ", Product ID: ${product.id}" +
-                          ", IMAGE URL: ${product.imageUrl}");
-                    },
-                    child: Text(
-                      "ADD TO CART",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w400, fontSize: 12),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            AddToCartButton(
+                height: 25,
+                width: 125,
+                fontSize: 12,
+                action: () {
+                  cart.addItem(product.id, product.price, product.title,
+                      product.imageUrl, product.squarePrice);
+                }),
           ],
         ),
       ),
@@ -114,8 +85,7 @@ class CastorOilProductView extends StatelessWidget {
             width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(product.imageUrl),
-                  fit: BoxFit.cover),
+                  image: AssetImage(product.imageUrl), fit: BoxFit.cover),
             ),
           ),
           Container(

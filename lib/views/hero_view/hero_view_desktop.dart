@@ -21,7 +21,7 @@ class HeroViewDesktop extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 100,
+          top: screen.screenHeight * .07,
           right: 1,
           child: AnimatedText(),
         ),

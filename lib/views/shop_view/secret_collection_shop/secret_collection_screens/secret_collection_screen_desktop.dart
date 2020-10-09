@@ -21,6 +21,7 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screen = ScreenDimensions(context);
     final subscribe = Provider.of<Subscription>(context);
     final cart = Provider.of<Cart>(context, listen: false);
     return Scaffold(
@@ -37,11 +38,13 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
         splashColor: Colors.black,
         child: Consumer<Cart>(
           builder: (_, cartData, ch) => Badge(
+            fontSize: 16,
+            topPosition: 4,
             //ch is passed into the consumer where the child is defined
             value: cartData.itemCount == 0 ? "" : cartData.itemCount.toString(),
             child: ch,
           ),
-          child: Icon(Icons.shopping_cart, color: Colors.white, size: 42),
+          child: Icon(Icons.shopping_cart, color: Colors.red, size: 42),
         ),
       ),
       body: Column(
@@ -154,6 +157,27 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
                             onPressed: () {
                               cart.addItem(9, 100.00, "The Secret Collection",
                                   "/images/entire_collection.png", 10000);
+                              Scaffold.of(context).hideCurrentSnackBar();
+                              Scaffold.of(context).showSnackBar(
+                                SnackBar(
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: Colors.green,
+                                  content: Container(
+                                    height: screen.screenHeight * 0.025,
+                                    width: screen.screenWidth * 0.05,
+                                    child: Center(
+                                      child: Text(
+                                        'Added item to cart!',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16),
+                                      ),
+                                    ),
+                                  ),
+                                  duration: Duration(seconds: 1),
+                                ),
+                              );
                             },
                             child: Text(
                               "ADD TO CART: \$100.00",
