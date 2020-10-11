@@ -10,9 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CartScreenMobile extends StatelessWidget {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-     var scaffoldKey = GlobalKey<ScaffoldState>();
     final cart = Provider.of<Cart>(context);
     var fullWidth = ScreenDimensions(context).screenWidth;
     return Scaffold(
@@ -21,9 +21,11 @@ class CartScreenMobile extends StatelessWidget {
       drawer: NavigationDrawer(),
       endDrawer: CartScreenMobile(),
       key: scaffoldKey,
-      body: Column(
+      body: ListView(
         children: [
-          NavigationBarMobile(scaffKey: scaffoldKey,),
+          NavigationBarMobile(
+            scaffKey: scaffoldKey,
+          ),
           Container(
             width: fullWidth,
             height: 100,
@@ -42,47 +44,40 @@ class CartScreenMobile extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ListView(
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "${cart.itemCount} items",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-                Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      height: 1,
-                      width: fullWidth / 3,
-                    )),
-                Container(
-                  padding: EdgeInsets.all(8),
-                  height: 200,
-                  width: 300,
-                  child: ListView.builder(
-                    // shrinkWrap: true,
-                    padding: const EdgeInsets.all(20),
-                    scrollDirection: Axis.vertical,
-                    itemCount: cart.items.length,
-                    itemBuilder: (ctx, i) => CartItemMobile(
-                        id: cart.items.values.toList()[i].id,
-                        price: cart.items.values.toList()[i].price,
-                        quantity: cart.items.values.toList()[i].quantity,
-                        title: cart.items.values.toList()[i].title,
-                        productId: cart.items.values.toList()[i].productId,
-                        imageUrl: cart.items.values.toList()[i].imageUrl),
-                  ),
-                ),
-              ],
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "${cart.itemCount} items",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400),
             ),
           ),
-          PromoFormMobile(),
+          Align(
+              alignment: Alignment.center,
+              child: Container(
+                height: 1,
+                width: fullWidth / 3,
+              )),
+          Container(
+            padding: EdgeInsets.all(8),
+            height: 200,
+            width: 300,
+            child: ListView.builder(
+              // shrinkWrap: true,
+              padding: const EdgeInsets.all(20),
+              scrollDirection: Axis.vertical,
+              itemCount: cart.items.length,
+              itemBuilder: (ctx, i) => CartItemMobile(
+                  id: cart.items.values.toList()[i].id,
+                  price: cart.items.values.toList()[i].price,
+                  quantity: cart.items.values.toList()[i].quantity,
+                  title: cart.items.values.toList()[i].title,
+                  productId: cart.items.values.toList()[i].productId,
+                  imageUrl: cart.items.values.toList()[i].imageUrl),
+            ),
+          ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -106,12 +101,14 @@ class CartScreenMobile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-     Align(
-                    alignment: Alignment.center,
-                    child: CheckoutButton(
-                      width: 150,
-                      height: 35,
-                    )),
+          Align(
+              alignment: Alignment.center,
+              child: CheckoutButton(
+                width: 150,
+                height: 35,
+              )),
+          SizedBox(height: 20),
+          PromoFormMobile(),
           SizedBox(height: 20),
         ],
       ),

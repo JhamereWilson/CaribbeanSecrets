@@ -38,6 +38,7 @@ class SecretCollectionScreenDesktop extends StatelessWidget {
         splashColor: Colors.black,
         child: Consumer<Cart>(
           builder: (_, cartData, ch) => Badge(
+            color: Colors.white,
             fontSize: 16,
             topPosition: 4,
             //ch is passed into the consumer where the child is defined
