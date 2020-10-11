@@ -169,12 +169,15 @@ class NavigationDrawer extends StatelessWidget {
             ],
           ),
             SizedBox(height: 40),
-              Text(
-                "Looking for 100% Pure Haitian Castor Oil in bulk? Contact us directly for pricing and availability.\n Call (856)701-9872 for inquries.",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w100),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Looking for 100% Pure Haitian Castor Oil in bulk? Contact us directly for pricing and availability.\n Call (856)701-9872 for inquries.",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w100),
+                ),
               ),
         ],
       ),

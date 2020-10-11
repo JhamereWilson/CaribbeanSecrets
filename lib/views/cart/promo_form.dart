@@ -130,6 +130,14 @@ class _PromoFormState extends State<PromoForm> {
               ),
             ],
           )
-        : Container();
+        : Container(
+            child: Center(
+              child: Text(
+                successMessage,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
+              ),
+            ),
+          );
   }
 }

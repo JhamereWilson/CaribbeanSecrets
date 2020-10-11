@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ScreenDimensions {
-  final BuildContext ctx;
+  final BuildContext context;
 
-  ScreenDimensions(this.ctx);
+  ScreenDimensions(this.context);
   
   get screenWidth{
-    double width = MediaQuery.of(ctx).size.width;
+    double width = MediaQuery.of(context).size.width;
     return width;
   }
 
   get screenHeight{
-    double height = MediaQuery.of(ctx).size.height;
+    double height = MediaQuery.of(context).size.height;
     return height;
   }
 

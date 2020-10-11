@@ -43,11 +43,12 @@ class _PromoFormMobileState extends State<PromoFormMobile> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 200,
-                height: 30,
+                width: screenWidth / 2,
+                height: screenHeight * .03,
                 child: Form(
                   key: _formKey,
                   child: TextFormField(
+                    cursorColor: Colors.white,
                     controller: _controller,
                     onSaved: (promoCode) => this.promoCode = promoCode,
                     validator: (value) {
@@ -102,11 +103,11 @@ class _PromoFormMobileState extends State<PromoFormMobile> {
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.025,
+                width: screenHeight * 0.025,
               ),
               SizedBox(
                 height: screenHeight * .03,
-                width: screenWidth / 3,
+                width: screenWidth / 4,
                 child: FlatButton(
                   color: Colors.red,
                   onPressed: () {
@@ -136,6 +137,14 @@ class _PromoFormMobileState extends State<PromoFormMobile> {
               ),
             ],
           )
-        : Container();
+        : Container(
+            child: Center(
+              child: Text(
+                successMessage,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
+              ),
+            ),
+          );
   }
 }

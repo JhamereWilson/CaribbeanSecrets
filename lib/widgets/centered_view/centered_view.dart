@@ -1,3 +1,4 @@
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:flutter/material.dart';
 
 class CenteredView extends StatelessWidget {
@@ -6,8 +7,9 @@ class CenteredView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screen = ScreenDimensions(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 60),
+      padding:  EdgeInsets.symmetric(horizontal: screen.screenWidth * 0.1, vertical: 60),
       alignment: Alignment.topCenter,
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 1600),

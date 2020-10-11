@@ -33,6 +33,7 @@ class _SubscribeFieldDesktopState extends State<SubscribeFieldDesktop> {
           child: Form(
             key: _formKey,
             child: TextFormField(
+              
               textAlign: TextAlign.center,
               controller: _emailController,
               onSaved: (email) => this.email = email,

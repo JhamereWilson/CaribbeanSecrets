@@ -1,4 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/shared/blinking_text.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/views/cart/cart_view_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/views/shop_view/shop_items_view.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
@@ -8,7 +9,8 @@ import 'package:flutter/material.dart';
 class ShopViewMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var scaffoldKey = GlobalKey<ScaffoldState>();
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final screen = ScreenDimensions(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.black,
@@ -51,7 +53,7 @@ class ShopViewMobile extends StatelessWidget {
                       color: Colors.white,
                       thickness: 0.5,
                     ),
-                    Container(height: 600, child: CastorOilItemPageView()),
+                    Container(height: screen.screenHeight * 0.8, child: CastorOilItemPageView()),
                   ],
                 ),
               ],

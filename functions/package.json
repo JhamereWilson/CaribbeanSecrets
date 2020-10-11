@@ -21,6 +21,7 @@
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.1",
     "square-connect": "^4.20200923.4",
+    "twilio": "^3.49.4",
     "uuid": "^8.3.0"
   },
   "devDependencies": {

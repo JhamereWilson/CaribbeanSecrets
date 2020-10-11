@@ -1,4 +1,5 @@
 import 'package:caribbean_secrets_ecommerce/providers/episodes.dart';
+import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
 import 'package:caribbean_secrets_ecommerce/views/cart/cart_view_mobile.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/navigation_row.dart';
 import 'package:caribbean_secrets_ecommerce/widgets/widgets.dart';
@@ -15,6 +16,7 @@ class SecretsTVScreenMobile extends StatelessWidget {
     var scaffoldKey = GlobalKey<ScaffoldState>();
     final episodesData = Provider.of<Episodes>(context);
     final episodes = episodesData.episodes;
+    final screen = ScreenDimensions(context);
     return Scaffold(
       backgroundColor: Colors.black,
       endDrawerEnableOpenDragGesture: false,
@@ -24,7 +26,9 @@ class SecretsTVScreenMobile extends StatelessWidget {
       key: scaffoldKey,
       body: Column(
         children: [
-          NavigationBarMobile(scaffKey: scaffoldKey,),
+          NavigationBarMobile(
+            scaffKey: scaffoldKey,
+          ),
           Expanded(
             child: ListView(
               children: [
@@ -34,6 +38,7 @@ class SecretsTVScreenMobile extends StatelessWidget {
                   color: Colors.white,
                   thickness: 0.5,
                 ),
+                SizedBox(height: screen.screenHeight * 0.05),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -44,18 +49,19 @@ class SecretsTVScreenMobile extends StatelessWidget {
                         fontWeight: FontWeight.w100),
                   ),
                 ),
+                SizedBox(height: screen.screenHeight * 0.05),
                 Container(
-                  height: 400,
-                  width: 600,
+                  height: screen.screenHeight * 0.8,
+                  width: screen.screenWidth,
                   child: GridView.builder(
-                    scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.vertical,
                     itemCount: episodes.length,
                     itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
                       value: episodes[i],
                       child: EpisodeItem(),
                     ),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                      crossAxisCount: 3,
                     ),
                   ),
                 ),

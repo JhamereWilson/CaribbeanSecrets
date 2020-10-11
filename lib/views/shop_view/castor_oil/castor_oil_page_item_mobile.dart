@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:caribbean_secrets_ecommerce/models/product_model.dart';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
@@ -14,58 +15,49 @@ class CastorOilPageItemMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
+    final screen = ScreenDimensions(context);
     return Container(
-      height: 650,
+      height: screen.screenHeight * 0.6,
       color: Colors.black,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(height: screen.screenHeight * 0.1),
           Align(
             alignment: Alignment.center,
-            child: Container(
-              width: 250,
-              height: 50,
-              child: Center(
-                child: Text(
-                  product.title,
-                  maxLines: 3,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+            child: Text(
+              product.title,
+              maxLines: 3,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Container(
-            height: 150,
-            width: 200,
+            height: screen.screenHeight * 0.25,
+            width: screen.screenWidth * 0.5,
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("/images/CS1Bottle.png"),
                   fit: BoxFit.fitHeight),
             ),
           ),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 150,
-              width: 300,
-              child: Center(
-                child: Text(
-                  product.description,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w200),
-                ),
-              ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: AutoSizeText(
+              product.description,
+              maxFontSize: 24,
+              minFontSize: 16,
+              maxLines: 3,
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w200),
             ),
           ),
+           SizedBox(height: screen.screenHeight * 0.05),
           AddToCartButton(
-              height: 40,
-              width: 150,
-              fontSize: 24,
+              height: screen.screenHeight * 0.05,
+              width: screen.screenWidth * 0.5,
+              fontSize: 12,
               action: () {
                 cart.addItem(product.id, product.price, product.title,
                     product.imageUrl, product.squarePrice);

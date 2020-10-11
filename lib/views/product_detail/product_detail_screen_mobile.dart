@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:caribbean_secrets_ecommerce/providers/cart.dart';
 import 'package:caribbean_secrets_ecommerce/providers/products.dart';
 import 'package:caribbean_secrets_ecommerce/shared/screen_dimensions.dart';
@@ -51,7 +52,7 @@ class _ProductDetailMobileViewState extends State<ProductDetailMobileView> {
                     children: [
                       Container(
                         height: 100,
-                        width: 100,
+                        width: screen.screenWidth* 0.3,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage(loadedProduct.imageUrl),
@@ -61,31 +62,42 @@ class _ProductDetailMobileViewState extends State<ProductDetailMobileView> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          AutoSizeText(
                             loadedProduct.title,
+                            maxFontSize: 24,
+                            minFontSize: 14,
+                            maxLines: 2,
                             // title,
                             style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16),
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           SizedBox(height: 10),
-                          Text(
+                          AutoSizeText(
                             "\$${loadedProduct.price.toString()}.00",
+                            maxFontSize: 16,
+                            maxLines: 1,
                             style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12),
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           SizedBox(height: 10),
-                          Text(
-                            loadedProduct.description,
-                            style: TextStyle(
+                          SizedBox(
+                            height: screen.screenHeight *0.1,
+                            width: screen.screenWidth *  0.35,
+                            child: AutoSizeText(
+                              loadedProduct.description,
+                              maxFontSize: 14,
+                              maxLines: 3,
+                              style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w100,
-                                fontSize: 10),
+                              ),
+                            ),
                           ),
-                          SizedBox(height: 50),
+                          SizedBox(height: 10),
                           Text(
                             "Quantity",
                             style: TextStyle(
@@ -96,7 +108,7 @@ class _ProductDetailMobileViewState extends State<ProductDetailMobileView> {
                           SizedBox(height: 5),
                           Container(
                             height: 30,
-                            width: 100,
+                            width: 110,
                             decoration: BoxDecoration(
                               border: Border.all(
                                   color: Colors.white,
